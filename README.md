@@ -17,7 +17,7 @@ Find your next movie or create your watchlist with this App. It include reviews,
 - [ ] User can follow other user
 - [ ] User can comment on other user's watch list
 
-### Tech Stack
+## Tech Stack
 
 
-### Useful links and resources
+## Useful links and resources
