@@ -3,18 +3,20 @@ import dotenv from 'dotenv'
 import cors from "cors";
 import mongoose from 'mongoose';
 import userRoutes from './routes/registerUser.js'
+import snackRoutes from './routes/snackRoutes.js'
 
 const app = express();
 dotenv.config();
 const port = process.env.PORT || 8080
 
 app.use(cors({
-	origin: [process.env.CLIENT_URL],
+	origin: "*",
 	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-	"preflightContinue": false,
-	"optionsSuccessStatus": 204,
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 
 // middleware for logging what path & method were invoked
 app.use((req, res, next) => {
@@ -25,6 +27,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/accounts', userRoutes)
+app.use('/snacklist', snackRoutes)
 
 
 // app.get('/', (req, res) =>{

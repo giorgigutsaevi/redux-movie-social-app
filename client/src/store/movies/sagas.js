@@ -1,4 +1,4 @@
-import { call, put, takeEvery, all, fork, take } from 'redux-saga/effects'
+import { call, put, takeEvery, all, fork } from 'redux-saga/effects'
 import { callApi } from '../../utils/api';
 import { fetchSuccess, fetchError } from './actions';
 import { FETCH_REQUEST } from './types';
