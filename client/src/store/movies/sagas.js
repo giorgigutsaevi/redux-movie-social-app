@@ -4,7 +4,10 @@ import { fetchSuccess, fetchError } from './actions';
 import { FETCH_REQUEST } from './types';
 
 const MOVIE_DB_API_KEY = process.env.REACT_APP_API_KEY
-const COURSE_API_URL = `https://api.themoviedb.org/3/movie/550?api_key=${MOVIE_DB_API_KEY}`
+const BASE_URL = "https://api.themoviedb.org/3"
+const COURSE_API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${MOVIE_DB_API_KEY}`
+
+console.log(COURSE_API_URL)
 
 // WORKER
 

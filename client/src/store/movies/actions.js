@@ -10,7 +10,7 @@ export const fetchRequest = () => {
 export const fetchSuccess = (data) => {
   return {
     type: FETCH_SUCCESS,
-    payload: data
+    payload: data,
   }
 }
 
