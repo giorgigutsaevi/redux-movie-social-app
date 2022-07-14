@@ -3,7 +3,20 @@ import {connect} from 'react-redux'
 import "./SnackList.css"
 import { createSnackRequest } from '../../store/snacks/actions'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const SnackList = (props) => {
+
+	const notify = () => toast.success("Snack added successfully 🎉", {
+		position: "top-right",
+		autoClose: 2000,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		})
 
 	const [snackData, setSnackData] = useState({
 		title: '',
@@ -15,6 +28,7 @@ const SnackList = (props) => {
 		e.preventDefault();
 		console.log(snackData)
 		props.dispatch(createSnackRequest(snackData))
+		notify()
 	
 		setSnackData({
 			title: '',
@@ -37,6 +51,7 @@ const SnackList = (props) => {
 		<div className='snacklist'>
 			<form onSubmit={handleSubmit}>
 				<h3 className='text-center p-3 snacklist-title'>Snack Wishlist</h3>
+				<ToastContainer/>
 				<div className='snacklist-form'>
 					<h5 className='snacklist-form-title'>Add a snack:</h5>
 					<label className='mt-2'>Candy</label>
