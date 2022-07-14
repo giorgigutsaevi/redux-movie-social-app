@@ -8,7 +8,6 @@ function App() {
 
   return (
     <div>
-      
       {pathname !== "/accounts/register" && <Navbar/>}
       <Routes>
         <Route exact path='/' element={<Dashboard/>}/>
