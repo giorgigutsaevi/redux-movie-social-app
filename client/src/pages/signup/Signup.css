@@ -1,0 +1,19 @@
+
+.signup-form-container{
+	border: 2px solid blue;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.signup-form{
+	border: 2px solid red;
+	min-height: 30vh;
+}
+
+.sign-up-hero{
+	border: 2px solid green;
+	min-height: 50vh;
+	min-width: 25vw;
+}
