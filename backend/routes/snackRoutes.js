@@ -1,5 +1,5 @@
 import express from 'express'
-import { addSnack, getSnacks } from '../controllers/snackController.js';
+import { addSnack, deleteSnack, getSnacks } from '../controllers/snackController.js';
 
 
 const router = express.Router();
@@ -14,7 +14,7 @@ router.get('/snacks', getSnacks)
 router.post('/add', addSnack);
 
 // DELETE a snack
-// router.delete('snacks/:id', )
+router.delete('/snack/:id', deleteSnack)
 
 // UPDATE a snack
 // router.put('snacks/:id', )

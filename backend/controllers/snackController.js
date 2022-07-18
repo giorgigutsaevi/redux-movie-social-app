@@ -1,6 +1,7 @@
+import mongoose from 'mongoose'
 import Snack from '../models/snack.js'
 
-export const getSnacks = async(req, res) => {
+export const getSnacks = async (req, res) => {
 	const allSnacks = await Snack.find({}).sort({ createdAt: -1 })
 
 	res.status(200).json(allSnacks)
@@ -29,4 +30,22 @@ export const addSnack = async (req, res) => {
 	} catch (error) {
 		res.status(400).json({ error: error.message })
 	}
+}
+
+// delete a snack
+export const deleteSnack = async (req, res) => {
+		const { id } = req.params
+		console.log(id)
+
+		if (!mongoose.Types.ObjectId.isValid(id)) {
+			return res.status(400).json({ error: "No such snack was found!" })
+		}
+
+		const snack = await Snack.findOneAndDelete({ _id: id })
+
+		if (!snack) {
+			return res.status(400).json({ error: "No such snack was found!" })
+		}
+
+		res.status(200).json(snack)
 }

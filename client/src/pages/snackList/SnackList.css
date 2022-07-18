@@ -1,37 +1,45 @@
-@import url("https://use.typekit.net/ykv0mtm.css");
+/* @import url("https://use.typekit.net/ykv0mtm.css"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .snacklist {
 	min-height: 100vh;
 	background-color: #f7fef9;
 }
 
+.snacklist-container {
+	/* border: 3px solid red; */
+}
+
 .snacklist-title {
-	color: #f27851;
-	font-family: ibm-plex-mono, sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight: bolder;
 }
 
 .snacklist-form {
 	display: flex;
 	flex-direction: column;
-	width: 30%;
-	margin: auto;
 	padding: 25px;
+	width: 40%;
+	margin: auto;
 }
 
 .snacklist-form-title {
 	color: #3a6b59;
 	font-weight: bold;
-	font-family: ibm-plex-mono, sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 .snacklist-form label {
 	color: #3a6b59;
 	font-weight: bold;
-	font-family: ibm-plex-mono, sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 .snacklist-form input {
 	background-color: #f7fef9;
-	font-family: ibm-plex-mono, sans-serif;
+	font-family: 'Poppins', sans-serif;
+}
+
+.snack-list {
+	/* border: 2px solid green; */
 }

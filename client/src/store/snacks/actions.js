@@ -1,4 +1,4 @@
-import { CREATE_ERROR, CREATE_REQUEST, CREATE_SUCCESS, FETCH_ERROR, FETCH_REQUEST, FETCH_SUCCESS } from "./types"
+import { CREATE_ERROR, CREATE_REQUEST, CREATE_SUCCESS, DELETE_ERROR, DELETE_REQUEST, DELETE_SUCCESS, FETCH_ERROR, FETCH_REQUEST, FETCH_SUCCESS } from "./types"
 
 export const fetchRequest = () => {
 	return {
@@ -37,6 +37,27 @@ export const createSnackSuccess = (data) => {
 export const createSnackError = (error) => {
 	return {
 		type: CREATE_ERROR,
+		payload: error
+	}
+}
+
+export const deleteSnackRequest = (id) => {
+	return {
+		type: DELETE_REQUEST,
+		payload: id
+	}
+}
+
+export const deleteSnackSuccess = (data) => {
+	return {
+		type: DELETE_SUCCESS,
+		payload: data,
+	}
+}
+
+export const deleteSnackError = (error) => {
+	return {
+		type: DELETE_ERROR,
 		payload: error
 	}
 }
