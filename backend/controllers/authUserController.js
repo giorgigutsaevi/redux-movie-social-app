@@ -1,0 +1,49 @@
+import User from "../models/user.js"
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+
+export const loginUser = async (req, res) => {
+	try {
+		const { email, password } = req.body;
+
+		// validation
+		if (!email || !password) {
+			return res
+				.status(400)
+				.json({ errorMessage: "Please enter all required fields." });
+		}
+
+		const existingUser = await User.findOne({ email });
+		if (!existingUser) {
+			return res.status(401).json({ errorMessage: "Wrong credentials." });
+		}
+
+		const isPasswordCorrect = await bcrypt.compare(password, existingUser.password)
+		if (!isPasswordCorrect) {
+			return res.status(401).json({ errorMessage: "Wrong credentials." });
+		}
+
+		// If everything is correct with validation, then sign the token.
+		const token = jwt.sign({
+			user: existingUser._id,
+		}, process.env.JWT_SECRET);
+
+		// send the token in a HTTP-only cookie
+		res.cookie("token", token, {
+			httpOnly: true,
+		})
+			.send();
+
+	} catch (error) {
+		console.log(error);
+		res.status(500).send();
+	}
+}
+
+export const logoutUser = (req, res) => {
+	res.cookie("token", "", {
+		httpOnly: true,
+		expires: new Date(0)
+	})
+		.send();
+}

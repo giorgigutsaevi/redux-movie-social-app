@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import CandyStore from './pages/snackList/SnackList';
 import Dashboard from './pages/dashboard/Dashboard';
 import Signup from './pages/signup/Signup';
+import Login from './pages/login/Login';
 
 function App() {
   const {pathname} = useLocation();
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Dashboard/>}/>
         <Route path='/accounts/register' element={<Signup/>}/>
+        <Route path='/accounts/login' element={<Login/>}/>
         <Route path='/candystore' element={<CandyStore/>}/>
       </Routes>
     </div>

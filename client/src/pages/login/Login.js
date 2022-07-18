@@ -1,26 +1,18 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import "./Signup.css"
+import "./Login.css"
 
-const Signup = () => {
+const Login = () => {
 	const navigate = useNavigate();
 
+
 	return (
-		<div className='signup-form-container'>
-			<div className='sign-up-hero me-5'>
+		<div className='login-form-container'>
+			<div className='login-hero me-5'>
 				<h1>photo here</h1>
 			</div>
-			<div className='signup-form'>
-				<h2>Sign up</h2>
-				<label className='mt-3 p-1'>
-					Username
-				</label>
-				<input
-					className="form-control mt-2"
-					type="text"
-					placeholder="Enter Username"
-					aria-label="default input example"
-				/>
+			<div className='login-form'>
+				<h2>Log in</h2>
 				<label className='mt-3 p-1'>
 					Email
 				</label>
@@ -47,4 +39,4 @@ const Signup = () => {
 	)
 }
 
-export default Signup
+export default Login;

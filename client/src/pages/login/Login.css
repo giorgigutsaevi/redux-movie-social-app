@@ -1,5 +1,5 @@
 
-.signup-form-container{
+.login-form-container{
 	border: 2px solid blue;
 	min-height: 100vh;
 	display: flex;
@@ -7,12 +7,12 @@
 	align-items: center;
 }
 
-.signup-form{
+.login-form{
 	border: 2px solid red;
 	min-height: 30vh;
 }
 
-.sign-up-hero{
+.login-hero{
 	border: 2px solid green;
 	min-height: 50vh;
 	min-width: 25vw;

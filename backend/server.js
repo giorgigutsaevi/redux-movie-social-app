@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv'
 import cors from "cors";
 import mongoose from 'mongoose';
-import userRoutes from './routes/registerUser.js'
+import userRoutes from './routes/userRoutes.js'
 import snackRoutes from './routes/snackRoutes.js'
 
 const app = express();

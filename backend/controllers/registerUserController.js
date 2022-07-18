@@ -1,5 +1,8 @@
 import User from "../models/user.js"
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const registerUser = async (req, res) => {
 	// res.status(200).json({msg: 'USER CREATED!'})
@@ -22,9 +25,22 @@ export const registerUser = async (req, res) => {
 			password: hashedPassword,
 		})
 
+		// sign the token
+		const token = jwt.sign({
+			user: newUser._id,
+		}, process.env.JWT_SECRET);
+
+		// send the token in a HTTP-only cookie
+		res.cookie("token", token, {
+			httpOnly: true,
+		})
+		.send();
+
+		// console.log(token)
+
 		res.status(200).send(newUser)
 
 	} catch (error) {
-		res.status(400).json({error: error.message})
+		res.status(400).json({ error: error.message })
 	}
 }
