@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
 		const token = req.cookies.token;
 
 		if (!token) {
-			return res.status(401).json({ errorMessage: "Unauthorized" })
+			return res.status(401).json({ errorMessage: "Wrong Credentials" })
 		}
 
 		const verified = jwt.verify(token, process.env.JWT_SECRET);
@@ -15,7 +15,7 @@ const auth = async (req, res, next) => {
 		next();
 	} catch (err) {
 		console.log(err)
-		res.status(401).json({ errorMessage: "Unauthorized" })
+		res.status(401).json({ errorMessage: "Wrong Credentials"})
 	}
 }
 

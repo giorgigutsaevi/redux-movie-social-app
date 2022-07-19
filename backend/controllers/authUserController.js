@@ -14,7 +14,7 @@ export const loginUser = async (req, res) => {
 		}
 
 		const existingUser = await User.findOne({ email });
-		console.log("FROM AUTHUSERCONTROLLER LOGINUSER ->", existingUser)
+	
 		if (!existingUser) {
 			return res.status(401).json({ errorMessage: "Wrong credentials." });
 		}

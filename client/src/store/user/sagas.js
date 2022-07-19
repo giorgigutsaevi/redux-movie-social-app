@@ -1,6 +1,6 @@
 import { all, fork, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
-import { createUserSuccess, loginSuccess, logoutSuccess } from './actions.js'
+import { createUserSuccess, loginError, loginSuccess, logoutSuccess } from './actions.js'
 import { CREATE_REQUEST, LOGIN_REQUEST, LOGOUT_REQUEST } from "./types"
 
 const SIGNUP_API = "http://localhost:8000/accounts/register"
@@ -26,7 +26,7 @@ function* handleLoginUser(action) {
 		yield put(loginSuccess(user, token))
 
 	} catch (error) {
-		yield console.log(error)
+		yield put(loginError(error))
 	}
 }
 

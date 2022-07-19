@@ -1,22 +1,24 @@
-import { CREATE_REQUEST, CREATE_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS} from "./types"
+import { CREATE_REQUEST, CREATE_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR} from "./types"
 
 const initialState = {
 	user: null,
 	authenticationToken: "",
 	isLoggedIn: false,
-	error: null,
+	error: false,
+	errorMessage: "",
 }
 
 export default function userReducer(state = initialState, action) {
 
 	switch (action.type) {
 
-		// case CREATE_USER:
-		// 	return {...state}
 		case CREATE_REQUEST:
 		case LOGIN_REQUEST:
 		case LOGOUT_REQUEST:
-			return {...state}
+			return {...state, error: false}
+
+		case LOGIN_ERROR:
+			return {...state, error: true, errorMessage: "Wrong Credentials, please try again.. 👻"}
 
 		case CREATE_SUCCESS:
 			return {...state, user: action.payload, authenticationToken: action.token, isLoggedIn: true}

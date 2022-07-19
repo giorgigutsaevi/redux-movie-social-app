@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
-import {connect} from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import ErrorMessage from '../../components/shared/ErrorMessage/ErrorMessage'
 import { loginRequest } from '../../store/user/actions'
 
 import "./Login.css"
@@ -31,8 +32,8 @@ const Login = (props) => {
 			password: "",
 		})
 
-		// console.log(loginForm)
-		navigate("/")
+		// console.log(props.error)
+		props.error && navigate('/')
 	}
 
 	return (
@@ -40,6 +41,8 @@ const Login = (props) => {
 			<div className='login-hero me-5'>
 				<h1>photo here</h1>
 			</div>
+			<div className='form-wrapper'>
+			{props?.error ? <ErrorMessage text={props.errorMessage}/> : ""}
 			<form className='login-form' onSubmit={handleLogin}>
 				<h2>Log in</h2>
 				<label className='mt-3 p-1'>
@@ -70,13 +73,18 @@ const Login = (props) => {
 					<button className='register-btn'>Log in</button>
 				</div>
 			</form>
+			</div>
 		</div>
 	)
 }
 
 const mapStateToProps = (state) => {
+	// console.log("STATE", state)
 	return {
-		user: state.user.user
+		user: state.user.user,
+		isLoggedIn: state.user.isLoggedIn,
+		error: state.user.error,
+		errorMessage: state.user.errorMessage,
 	}
 }
 
