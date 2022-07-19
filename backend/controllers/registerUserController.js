@@ -19,11 +19,13 @@ export const registerUser = async (req, res) => {
 		const salt = await bcrypt.genSalt(10);
 		const hashedPassword = await bcrypt.hash(password, salt)
 
-		const newUser = await User.create({
+		const newUser = new User({
 			username: username,
 			email: email,
 			password: hashedPassword,
 		})
+
+		await newUser.save()
 
 		// sign the token
 		const token = jwt.sign({
@@ -32,13 +34,11 @@ export const registerUser = async (req, res) => {
 
 		// send the token in a HTTP-only cookie
 		res.cookie("token", token, {
-			httpOnly: true,
+			// httpOnly: true,
 		})
 		.send();
 
 		// console.log(token)
-
-		res.status(200).send(newUser)
 
 	} catch (error) {
 		res.status(400).json({ error: error.message })

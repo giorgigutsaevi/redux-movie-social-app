@@ -6,6 +6,7 @@ export async function callApi(url, method, data) {
 		headers: {
 			"Content-Type": 'application/json'
 		},
+		credentials: 'same-origin',
 		body: JSON.stringify(data),
 	})
 

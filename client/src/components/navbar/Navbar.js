@@ -1,8 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
+import { logoutRequest } from '../../store/user/actions'
 
-const Navbar = () => {
+const Navbar = (props) => {
+	const navigate = useNavigate();
+
+	const handleLogout = async () => {
+
+		
+		props.dispatch(logoutRequest())
+		navigate('accounts/login')
+	}
+
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
 			<div className="container-fluid">
@@ -56,12 +68,12 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="#">
+							<button className="nav-link" onClick={handleLogout}>
 								Logout
-							</NavLink>
+							</button>
 						</li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</nav>
@@ -69,4 +81,10 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(mapStateToProps)(Navbar);

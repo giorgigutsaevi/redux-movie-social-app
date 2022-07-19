@@ -4,6 +4,9 @@ import CandyStore from './pages/snackList/SnackList';
 import Dashboard from './pages/dashboard/Dashboard';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 function App() {
   const {pathname} = useLocation();

@@ -14,6 +14,7 @@ export const loginUser = async (req, res) => {
 		}
 
 		const existingUser = await User.findOne({ email });
+		console.log("FROM AUTHUSERCONTROLLER LOGINUSER ->", existingUser)
 		if (!existingUser) {
 			return res.status(401).json({ errorMessage: "Wrong credentials." });
 		}
@@ -30,13 +31,13 @@ export const loginUser = async (req, res) => {
 
 		// send the token in a HTTP-only cookie
 		res.cookie("token", token, {
-			httpOnly: true,
+			// httpOnly: true,
 		})
 			.send();
 
 	} catch (error) {
 		console.log(error);
-		res.status(500).send();
+		res.status(500).json({errorMessage: 'An error occured.'});
 	}
 }
 
