@@ -18,7 +18,7 @@ export default function userReducer(state = initialState, action) {
 			return {...state, error: false}
 
 		case LOGIN_ERROR:
-			return {...state, error: true, errorMessage: "Wrong Credentials, please try again.. 👻"}
+			return {...state, error: true, errorMessage: action.payload.response.data.errorMessage}
 
 		case CREATE_SUCCESS:
 			return {...state, user: action.payload, authenticationToken: action.token, isLoggedIn: true}

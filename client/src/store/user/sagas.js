@@ -21,9 +21,11 @@ function* handleRegisterUser(action) {
 
 function* handleLoginUser(action) {
 	try {
+		// console.log(action.navigate)
 		const user = yield axios.post(LOGIN_API, action.payload)
 		const token = document.cookie.split("token=").join("")
 		yield put(loginSuccess(user, token))
+		action.navigate("/")
 
 	} catch (error) {
 		yield put(loginError(error))

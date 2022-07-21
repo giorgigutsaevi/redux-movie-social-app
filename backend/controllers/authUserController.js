@@ -14,14 +14,15 @@ export const loginUser = async (req, res) => {
 		}
 
 		const existingUser = await User.findOne({ email });
-	
+		// console.log("EXISTING USER", existingUser)
 		if (!existingUser) {
-			return res.status(401).json({ errorMessage: "Wrong credentials." });
+			return res.status(401).json({ errorMessage: "Wrong credentials, Please check your email or password!" });
 		}
 
 		const isPasswordCorrect = await bcrypt.compare(password, existingUser.password)
+	
 		if (!isPasswordCorrect) {
-			return res.status(401).json({ errorMessage: "Wrong credentials." });
+			return res.status(401).json({ errorMessage: "Wrong credentials, please check your email or password!" });
 		}
 
 		// If everything is correct with validation, then sign the token.

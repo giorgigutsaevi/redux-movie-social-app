@@ -18,15 +18,14 @@ export default function snackReducer(state = initialState, action) {
 			return { ...state, isLoading: true }
 
 		case FETCH_SUCCESS:
+			// console.log('from FETCH_SUCCESS', action.payload)
 			return { ...state, isLoading: false, snackList: action.payload }
 
 		case CREATE_SUCCESS:
 			return { ...state, isLoading: false, snackList: [...state.snackList, action.payload] }
 
 		case DELETE_SUCCESS:
-			console.log('from delete_success ---->', action.payload)
-			// console.log('from DELETE SUCCESS in reducer', state.snackList)
-			const newState = state.snackList.filter(snack => snack._id !== action.payload._id)
+			const newState = state.snackList.filter(snack => snack._id !== action.payload.data._id)
 			return { ...state, isLoading: false, snackList: newState }
 
 		default:

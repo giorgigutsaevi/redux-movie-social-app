@@ -22,11 +22,11 @@ export const createUserError = (error) => {
 	}
 }
 
-export const loginRequest = (user) => {
-	console.log(user)
+export const loginRequest = (user, navigate) => {
 	return {
 		type: LOGIN_REQUEST,
-		payload: user
+		payload: user,
+		navigate: navigate,
 	}
 }
 

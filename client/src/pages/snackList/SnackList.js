@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import "./SnackList.css"
@@ -28,6 +29,7 @@ const SnackList = (props) => {
 
 	useEffect(() => {
 		props.dispatch(fetchRequest())
+
 	}, [])
 
 	const handleSubmit = (e) => {

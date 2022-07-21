@@ -2,10 +2,12 @@ import jwt from "jsonwebtoken"
 
 const auth = async (req, res, next) => {
 	try {
+		console.log(req)
 		const token = req.cookies.token;
+		console.log(token)
 
 		if (!token) {
-			return res.status(401).json({ errorMessage: "Wrong Credentials" })
+			return res.status(401).json({ errorMessage: "Not AUTHORIZED! Please login or sign up." })
 		}
 
 		const verified = jwt.verify(token, process.env.JWT_SECRET);
@@ -15,7 +17,7 @@ const auth = async (req, res, next) => {
 		next();
 	} catch (err) {
 		console.log(err)
-		res.status(401).json({ errorMessage: "Wrong Credentials"})
+		res.status(401).json({ errorMessage: "Not AUTHORIZED! Please login or sign up."})
 	}
 }
 
