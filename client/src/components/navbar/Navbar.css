@@ -1,0 +1,27 @@
+
+
+.nav-link-btn{
+	border: none;
+	background-color: transparent;
+	color: #2C3333 !important;
+}
+
+.nav-link-btn a{
+	text-decoration: none
+}
+
+.dropdown-link{
+	color: #2C3333 !important;
+}
+
+.logout-item:hover{
+	background-color: #686c6c39;
+}
+
+.profile-picture{
+	width: 20px;
+}
+
+.account-wrapper{
+	padding: 5px;
+}

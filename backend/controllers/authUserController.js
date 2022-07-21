@@ -34,7 +34,7 @@ export const loginUser = async (req, res) => {
 		res.cookie("token", token, {
 			// httpOnly: true,
 		})
-			.send();
+			.send(existingUser);
 
 	} catch (error) {
 		console.log(error);

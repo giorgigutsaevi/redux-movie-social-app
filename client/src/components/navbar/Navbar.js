@@ -1,16 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
+import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd } from "react-icons/ai";
 import { logoutRequest } from '../../store/user/actions'
 
 const Navbar = (props) => {
 	const navigate = useNavigate();
 
-	const handleLogout = async () => {
+	useEffect(() => {
 
-		
+	})
+
+	const handleLogout = async () => {
 		props.dispatch(logoutRequest())
 		navigate('accounts/login')
 	}
@@ -19,7 +22,7 @@ const Navbar = (props) => {
 		<nav className="navbar navbar-expand-lg bg-light">
 			<div className="container-fluid">
 				<NavLink className="navbar-brand" to="/">
-					Movier
+					MovieNest
 				</NavLink>
 				<button
 					className="navbar-toggler"
@@ -61,17 +64,55 @@ const Navbar = (props) => {
 							Search
 						</button>
 					</form>
+
 					<ul className="navbar-nav mb-2 mb-lg-0">
-						<li className="nav-item">
-							<NavLink className="nav-link" to="#">
-								Login
-							</NavLink>
+						{props?.user && <li className="nav-item dropdown">
+							<Link
+								className="nav-link dropdown-toggle dropdown-link"
+								to="#"
+								id="navbarDropdown"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								<span className='account-wrapper'>{props?.user}<img className='profile-picture ms-1' alt='profile' src='/images/profile.png' /></span>
+
+							</Link>
+							<ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li>
+									<Link className="dropdown-item" to="#">
+										<div className='d-flex align-items-center'>
+											<AiOutlineUser /><span className='ms-1'>Profile</span>
+										</div>
+
+									</Link>
+								</li>
+								<li className='p-2 logout-item'>
+									<button className="nav-link nav-link-btn p-2" onClick={handleLogout}>
+										<div className='d-flex align-items-center'>
+											<AiOutlineLogout /><span className='ms-1'>Logout</span>
+										</div>
+
+									</button>
+								</li>
+							</ul>
 						</li>
-						<li className="nav-item">
-							<button className="nav-link" onClick={handleLogout}>
-								Logout
-							</button>
-						</li>
+						}
+						{
+							!props?.user && <li className="nav-item">
+								<button className="nav-link nav-link-btn" >
+									<AiOutlineUser /><span className='ms-1'>Login</span>
+								</button>
+							</li>
+						}
+
+						{
+							!props?.user && <li className="nav-item">
+								<button className="nav-link nav-link-btn">
+									<Link to='accounts/register'><AiOutlineUserAdd /><span className='ms-1'>Sign up</span></Link>
+								</button>
+							</li>
+						}
 					</ul>
 
 				</div>
@@ -83,7 +124,10 @@ const Navbar = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		user: state.user
+		user: state.user.user,
+		token: state.user.authenticationToken,
+		error: state.user.error,
+		isLoggedIn: state.user.isLoggedIn,
 	}
 }
 

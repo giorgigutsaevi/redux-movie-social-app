@@ -1,4 +1,4 @@
-import { CREATE_REQUEST, CREATE_SUCCESS, CREATE_ERROR, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR, LOGOUT_ERROR} from "./types"
+import { CREATE_REQUEST, CREATE_SUCCESS, CREATE_ERROR, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR, LOGOUT_ERROR, PERSIST_LOGIN_REQUEST, PERSIST_LOGIN_SUCCESS, PERSIST_LOGIN_ERROR} from "./types"
 
 export const createUserRequest = (user) => {
 	return {
@@ -27,6 +27,28 @@ export const loginRequest = (user, navigate) => {
 		type: LOGIN_REQUEST,
 		payload: user,
 		navigate: navigate,
+	}
+}
+
+export const persistLoginRequest = (id) => {
+	return {
+		type: PERSIST_LOGIN_REQUEST,
+		payload: id,
+	}
+}
+
+export const persistLoginSuccess = (data) => {
+	return {
+		type: PERSIST_LOGIN_SUCCESS,
+		payload: data,
+		token: data
+	}
+}
+
+export const persistLoginError = (error) => {
+	return {
+		type: PERSIST_LOGIN_ERROR,
+		payload: error,
 	}
 }
 
