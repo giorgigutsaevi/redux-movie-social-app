@@ -6,6 +6,10 @@ const userSchema = new Schema({
 	username: {
 		type: String,
 		required: true,
+		validate: {
+			validator: (username) => username.length > 4,
+			message: "Username must be longer than 4 characters"
+		},
 		lowercase: true,
 		min: 6,
 		trim: true,
@@ -21,7 +25,7 @@ const userSchema = new Schema({
 		type: String,
 		required: true,
 		min: 6,
-	},
+	}, 
 	profilePic: {
 		type: String,
 		default: "/images/profile.png"

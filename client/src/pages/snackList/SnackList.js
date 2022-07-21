@@ -61,7 +61,7 @@ const SnackList = (props) => {
 	if (props?.snacks && props?.snacks.length > 0) {
 		snackElements = props?.snacks.map((snack, index) => {
 			return (
-				<SnackCard key={snack._id} title={snack.title} category={snack.category} id={snack._id} />
+				<SnackCard key={snack._id} title={snack?.title} category={snack?.category} id={snack._id} />
 			)
 		})
 	}

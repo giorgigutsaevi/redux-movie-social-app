@@ -2,13 +2,15 @@ import mongoose from 'mongoose'
 import Snack from '../models/snack.js'
 
 export const getSnacks = async (req, res) => {
-	const allSnacks = await Snack.find({}).sort({ createdAt: -1 })
-
+	const allSnacks = await Snack.find({user: req.user}).sort({ createdAt: -1 })
+	
 	res.status(200).json(allSnacks)
 }
 
+// adding a snack
 export const addSnack = async (req, res) => {
 	const { title, category, price } = req.body
+	console.log('REQ USER ID-->', req.user)
 
 	console.log(title, category)
 
@@ -23,6 +25,7 @@ export const addSnack = async (req, res) => {
 			title: title,
 			category: category,
 			price: price,
+			user: req.user,
 		})
 
 		res.status(200).send(newSnack)

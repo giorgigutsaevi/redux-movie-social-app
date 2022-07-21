@@ -26,7 +26,7 @@ function* handleCreate(action) {
 	try {
 		// const res = yield call(callApi, API_URI, 'POST', action.payload)
 		const res = yield axios.post(ADD_SNACK_URI, action.payload )
-		yield put(createSnackSuccess(res))
+		yield put(createSnackSuccess(res.data))
 
 	} catch (error) {
 		yield put(createSnackError(error))

@@ -22,6 +22,7 @@ export default function snackReducer(state = initialState, action) {
 			return { ...state, isLoading: false, snackList: action.payload }
 
 		case CREATE_SUCCESS:
+			console.log("CREATE SUCCESS ------->", action.payload.data)
 			return { ...state, isLoading: false, snackList: [...state.snackList, action.payload] }
 
 		case DELETE_SUCCESS:
