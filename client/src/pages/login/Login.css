@@ -1,21 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 .login-form-container{
-	border: 2px solid blue;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #eaf6f6b8;
 }
 
 .login-form{
-	border: 2px solid red;
 	min-height: 30vh;
+	min-width: 20vw;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 10px;
+	font-family: 'Poppins', sans-serif;
+	background-color: rgba(245, 245, 245, 0.555);
 }
 
+.form-title{
+	font-family: 'Oswald', sans-serif;
+}
+
+.form-secondary-title{
+	color: #413f42b4;
+}
+
+
 .login-hero{
-	border: 2px solid green;
-	min-height: 50vh;
-	min-width: 25vw;
+	min-height: 55vh;
+	min-width: 40vw;
+	background-image: url(https://images.unsplash.com/photo-1499426666029-5c0678a1d89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 3px;
+	/* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .button-container{

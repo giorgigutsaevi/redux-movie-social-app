@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
@@ -36,7 +36,7 @@ const Navbar = (props) => {
 					<span className="navbar-toggler-icon" />
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
 							<NavLink className="nav-link active" aria-current="page" to="/candystore">
 								Snack List
@@ -53,6 +53,7 @@ const Navbar = (props) => {
 							</NavLink>
 						</li>
 					</ul>
+					}
 					<form className="d-flex me-5" role="search">
 						<input
 							className="form-control me-2"
@@ -65,7 +66,7 @@ const Navbar = (props) => {
 						</button>
 					</form>
 
-					<ul className="navbar-nav mb-2 mb-lg-0">
+					<ul className="navbar-nav mb-5 mb-lg-1 mx-auto">
 						{props?.user && <li className="nav-item dropdown">
 							<Link
 								className="nav-link dropdown-toggle dropdown-link"
@@ -101,11 +102,12 @@ const Navbar = (props) => {
 						{
 							!props?.user && <li className="nav-item">
 								<button className="nav-link nav-link-btn" >
-									<AiOutlineUser /><span className='ms-1'>Login</span>
+									<Link to='accounts/login'>
+										<AiOutlineUser /><span className='ms-1'>Login</span>
+									</Link>
 								</button>
 							</li>
 						}
-
 						{
 							!props?.user && <li className="nav-item">
 								<button className="nav-link nav-link-btn">
@@ -114,7 +116,6 @@ const Navbar = (props) => {
 							</li>
 						}
 					</ul>
-
 				</div>
 			</div>
 		</nav>

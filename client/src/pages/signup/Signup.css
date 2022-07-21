@@ -1,25 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
-.signup-form-container{
-	border: 2px solid blue;
+.signup-form-container {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #eaf6f6b8;
 }
 
-.signup-form{
-	border: 2px solid red;
-	min-height: 30vh;
+.signup-form {
+	min-height: 35vh;
+	min-width: 20vw;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 10px;
+	font-family: 'Poppins', sans-serif;
+	background-color: rgba(245, 245, 245, 0.538);
 }
 
-.sign-up-hero{
-	border: 2px solid green;
-	min-height: 50vh;
-	min-width: 25vw;
+.signup-form-title{
+	font-family: 'Oswald', sans-serif;
 }
 
-.button-container{
+.signup-form-secondary-title{
+	color: #413f42b4;
+}
+
+
+.sign-up-hero {
+	min-height: 60vh;
+	min-width: 40vw;
+	background-image: url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 3px;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.button-container {
 	margin-top: 15px;
 	display: flex;
 	justify-content: center;
+}
+
+.sign-up-image {
+	object-fit: contain;
+	width: 100%;
+}
+
+.register-btn {
+	border: none;
+	padding: 6px 40px;
+	background-color: #B25068;
+	color: whitesmoke;
+	border-radius: 5px;
+}
+
+button[disabled]{
+	background-color: #b2506858;
 }

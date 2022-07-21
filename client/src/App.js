@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar';
 import CandyStore from './pages/snackList/SnackList';
@@ -6,10 +7,9 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
 import axios from 'axios';
-import { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { persistLoginRequest } from './store/user/actions';
-import { parseJwt } from "./utils/parseJwt"
+import { parseJwt } from "./utils/parseJWT"
 
 axios.defaults.withCredentials = true;
 
@@ -30,7 +30,7 @@ function App(props) {
 
   return (
     <div>
-      {pathname !== "/accounts/register" && <Navbar />}
+      {pathname !== "/accounts/register" && pathname !== "/accounts/login" && <Navbar />}
       <Routes>
         <Route exact path='/' element={<Dashboard />} />
         <Route path='/accounts/register' element={<Signup />} />
