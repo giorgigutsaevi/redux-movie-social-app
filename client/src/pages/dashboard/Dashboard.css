@@ -11,3 +11,17 @@
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 }
+
+.pagination-button{
+	background-color: transparent;
+	border: 1px solid #c59108;
+	font-weight: bold;
+	color: #c59108;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.pagination-button:hover{
+	color: #A5BECC;
+	border: 1px solid #A5BECC;
+}

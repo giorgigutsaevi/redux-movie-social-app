@@ -5,16 +5,15 @@ import { FETCH_REQUEST } from './types';
 
 const MOVIE_DB_API_KEY = process.env.REACT_APP_API_KEY
 const BASE_URL = "https://api.themoviedb.org/3"
-const COURSE_API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${MOVIE_DB_API_KEY}`
-
-console.log(COURSE_API_URL)
+const COURSE_API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${MOVIE_DB_API_KEY}&page=`
 
 // WORKER
 
 // FETCH - saga
-function* handleFetch() {
+function* handleFetch(action) {
+	console.log(action.payload)
 	try {
-		const response = yield call(callApi, COURSE_API_URL, 'GET');
+		const response = yield call(callApi, COURSE_API_URL + action.payload, 'GET');
 		yield put(fetchSuccess(response))
 	} catch (error) {
 		yield put(fetchError(error))

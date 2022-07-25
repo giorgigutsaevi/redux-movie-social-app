@@ -1,9 +1,10 @@
 import { FETCH_ERROR, FETCH_REQUEST, FETCH_SUCCESS } from "./types"
 
 // getting data actions
-export const fetchRequest = () => {
+export const fetchRequest = (page) => {
   return {
     type: FETCH_REQUEST,
+    payload: page
   }
 }
 

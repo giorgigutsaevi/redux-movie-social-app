@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { fetchRequest } from '../../store/movies/actions'
 import MovieCard from '../../components/movieCard/MovieCard'
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+
+
 import "./Dashboard.css"
 
 const Dashboard = (props) => {
+	const [currentPageNum, setCurrentPageNum] = useState(1)
 
 	useEffect(() => {
-		props.dispatch(fetchRequest())
-	}, [])
+		props.dispatch(fetchRequest(currentPageNum))
+	}, [currentPageNum])
 
 	if (props.isLoading) {
 		return (
@@ -31,17 +36,34 @@ const Dashboard = (props) => {
 	let movies = null;
 	movies = props?.movies?.results.map((movie) => {
 		return (
-		<MovieCard 
-			key={movie.id}
-			movieData={movie}
-		/>)
+			<MovieCard
+				key={movie.id}
+				movieData={movie}
+			/>)
 	})
+
+
+
+	const handleNextPage = () => {
+		console.log("next page clicked!")
+		setCurrentPageNum(prevState => prevState + 1)
+	}
+
+	const handlePrevPage = () => {
+		console.log("next page clicked!")
+		setCurrentPageNum(prevState => prevState - 1)
+	}
 
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
-			<h3 className='text-center mt-5 dashboard-trending'>Trending Now 💫</h3>
+				<h3 className='text-center mt-5 dashboard-trending'>Trending Now 💫</h3>
 				{movies}
+				<div className='text-center mt-5'>
+					{props.currentPage > 1 && <button className='pagination-button me-3' onClick={handlePrevPage}><BsChevronLeft /> Previous Page</button>}
+					<button className='pagination-button' onClick={handleNextPage}>Next Page <BsChevronRight /></button>
+				</div>
+
 			</div>
 		</div>
 	)
@@ -52,6 +74,7 @@ const mapStateToProps = (state) => {
 	return {
 		movies: state.movies.movieList,
 		isLoading: state.movies.isLoading,
+		currentPage: state.movies.currentPage,
 	}
 }
 

@@ -6,6 +6,8 @@ const initialState = {
 	errors: undefined,
 	status: undefined,
 	movie: undefined,
+	currentPage: 1,
+
 }
 
 export default function movieReducer(state = initialState, action) {
@@ -15,7 +17,7 @@ export default function movieReducer(state = initialState, action) {
 			return { ...state, isLoading: true }
 
 		case FETCH_SUCCESS:
-			return {...state, isLoading: false, movieList: action.payload}
+			return {...state, isLoading: false, movieList: action.payload, currentPage: action.payload.page}
 
 		default:
 			return { ...state }

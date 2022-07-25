@@ -13,10 +13,10 @@ const MovieCard = (props) => {
 	const IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 	return (
 		<div className='col-md-3 moviecard'>
-			<Card sx={{ maxWidth: 330, minHeight: 400, background: '#17000c' }} className='mt-3 p-1 card'>
+			<Card sx={{ maxWidth: 350, minHeight: 450, background: '#17000c' }} className='mt-3 p-1 card'>
 				<CardMedia
 					component="img"
-					height="350"
+					height="330"
 					image={`${IMAGE_URL}${props.movieData.poster_path}`}
 					alt="green iguana"
 				/>
