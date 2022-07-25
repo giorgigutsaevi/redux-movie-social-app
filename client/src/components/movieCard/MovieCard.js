@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,13 +8,12 @@ import Typography from '@mui/material/Typography';
 import "./MovieCard.css"
 
 const MovieCard = (props) => {
-
-	// console.log(props.movieData)
+	const [readMore, setReadMore] = useState(false);
 
 	const IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 	return (
 		<div className='col-md-3'>
-			<Card sx={{ maxWidth: 350, minHeight: 450, background: '#191A19' }} className='mt-3 p-1 card'>
+			<Card sx={{ maxWidth: 330, minHeight: 400, background: '#191A19' }} className='mt-3 p-1 card'>
 				<CardMedia
 					component="img"
 					height="350"
@@ -22,11 +21,14 @@ const MovieCard = (props) => {
 					alt="green iguana"
 				/>
 				<CardContent>
-					<Typography gutterBottom variant="h5" component="div" style={{color: "#f5f5f5"}}>
+					<Typography gutterBottom variant="h6" component="div" style={{ color: "#f5f5f5" }}>
 						{props.movieData.original_title}
 					</Typography>
-					<Typography style={{color: "#f5f5f5"}} variant="body2" color="text.secondary">
-						{props.movieData.overview}
+					<Typography style={{ color: "#f5f5f5" }} variant="body2" color="text.secondary">
+						{readMore ? props.movieData.overview : `${props.movieData.overview.substring(0, 140)}...`}
+						<button className='readmore-button' onClick={() => setReadMore(!readMore)}>
+							{readMore ? "show less" : "show more"}
+						</button>
 					</Typography>
 				</CardContent>
 				<CardActions>
