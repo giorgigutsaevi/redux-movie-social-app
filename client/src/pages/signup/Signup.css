@@ -6,7 +6,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #fffafa;
+	background-color: #2d0112;
+	/* background-color: #fffafa; */
 }
 
 .signup-form {
@@ -15,17 +16,37 @@
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	padding: 10px;
 	font-family: 'Poppins', sans-serif;
-	background-color: rgba(245, 245, 245, 0.538);
+	background-color: #17000c;
+}
+
+.signup-form label{
+	color: #f1f1f1;
 }
 
 .signup-form-title{
 	font-family: 'Oswald', sans-serif;
+	color: #c59108;
 }
 
 .signup-form-secondary-title{
-	color: #413f42b4;
+	color: #f1f1f1;
 }
 
+.log-in-msg{
+	color: #f1f1f1;
+}
+
+.log-in-msg-btn{
+	color: #c59108;
+}
+
+.log-in-msg-btn:hover{
+	color: #A5BECC;
+}
+
+.log-in-msg-link{
+	text-decoration: none;
+}
 
 .sign-up-hero {
 	min-height: 60vh;

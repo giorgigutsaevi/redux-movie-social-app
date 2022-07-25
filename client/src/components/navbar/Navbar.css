@@ -1,31 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-.movinest-navbar{
-	font-family: 'Poppins', sans-serif;
+.movienest-navbar {
+	font-family: 'Inter', sans-serif;
+	background-color: #17000c;
 }
 
-.nav-link-btn{
+.navbar-brand {
+	color: #f1f1f1;
+	font-weight: bold;
+}
+
+.nav-link {
+	color: #f1f1f1 !important;
+	font-weight: bold;
+}
+
+.nav-link-btn {
 	border: none;
 	background-color: transparent;
 	color: #2C3333 !important;
 }
 
-.nav-link-btn a{
+.nav-link-btn a {
 	text-decoration: none
 }
 
-.dropdown-link{
-	color: #2C3333 !important;
+.dropdown-link {
+	color: #f1f1f1 !important;
 }
 
-.logout-item:hover{
+.logout-item:hover {
 	background-color: #686c6c39;
 }
 
-.profile-picture{
-	width: 20px;
+.profile-picture {
+	width: 35px;
 }
 
-.account-wrapper{
+.account-wrapper {
 	padding: 5px;
+	color: #f1f1f1;
+	font-weight: bold;
+}
+
+nav a.active{
+	color: #c59108 !important;
+}
+
+.movienest-container .nav-link.active{
+	color: #c59108 !important;
+	border: 2px solid #c59108;
+	border-radius: 20px;
 }

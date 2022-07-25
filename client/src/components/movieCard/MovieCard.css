@@ -1,4 +1,17 @@
-.card{
+
+.moviecard{
+	position: relative;
+	transition: top 1s ease;
+	top: 0;
+}
+
+.moviecard:hover {
+	top: -10px;
+	transition: top 0.5s ease;
+	cursor: pointer;
+}
+
+.card {
 	position: relative;
 }
 
@@ -13,7 +26,7 @@
 	border-radius: 50%;
 }
 
-.rating{
+.rating {
 	font-weight: bold;
 	position: relative;
 	top: 50%;
@@ -21,7 +34,7 @@
 	transform: translate(-50%, -50%);
 }
 
-.readmore-button{
+.readmore-button {
 	border: none;
 	background-color: transparent;
 	color: #F0A500;

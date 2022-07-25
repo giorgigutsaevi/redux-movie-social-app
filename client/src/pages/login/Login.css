@@ -6,7 +6,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #fffafa;
+	background-color: #2d0112;
+	/* background-color: #fffafa; */
 }
 
 .login-form{
@@ -15,17 +16,36 @@
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	padding: 10px;
 	font-family: 'Poppins', sans-serif;
-	background-color: rgba(245, 245, 245, 0.555);
+	background-color: #17000c;
+}
+
+.login-form label{
+	color: #f1f1f1;
 }
 
 .form-title{
 	font-family: 'Oswald', sans-serif;
+	color: #c59108;
 }
 
 .form-secondary-title{
-	color: #413f42b4;
+	color: #f1f1f1;
 }
 
+.sign-up-msg{
+	color: #f1f1f1;
+}
+
+.sign-up-msg-link{
+	text-decoration: none;
+}
+
+.sign-up-msg-btn{
+	color: #c59108;
+}
+.sign-up-msg-btn:hover{
+	color: #A5BECC;
+}
 
 .login-hero{
 	min-height: 55vh;

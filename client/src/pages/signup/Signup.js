@@ -109,10 +109,10 @@ const Signup = (props) => {
 						>Register</button>
 					</div>
 
-					<div className='mt-3'>
+					<div className='mt-3 log-in-msg'>
 						Have an account?
 						<div>
-							<NavLink to='/accounts/login'><span className='fw-bold'>Log in</span></NavLink>
+							<NavLink className='log-in-msg-link' to='/accounts/login'><span className='log-in-msg-btn fw-bold'>Log in</span></NavLink>
 						</div>
 					</div>
 				</form>

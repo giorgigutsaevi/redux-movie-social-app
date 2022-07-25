@@ -12,8 +12,8 @@ const MovieCard = (props) => {
 
 	const IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 	return (
-		<div className='col-md-3'>
-			<Card sx={{ maxWidth: 330, minHeight: 400, background: '#191A19' }} className='mt-3 p-1 card'>
+		<div className='col-md-3 moviecard'>
+			<Card sx={{ maxWidth: 330, minHeight: 400, background: '#17000c' }} className='mt-3 p-1 card'>
 				<CardMedia
 					component="img"
 					height="350"

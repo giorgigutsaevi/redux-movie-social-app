@@ -16,10 +16,10 @@ const Navbar = (props) => {
 	}
 
 	return (
-		<nav className="navbar navbar-expand-lg bg-light movinest-navbar">
+		<nav className="navbar navbar-expand-lg fixed-top movienest-navbar">
 			<div className="container-fluid movienest-container">
 				<NavLink className="navbar-brand" to="/">
-					MovieNest
+					MovieNest 🍿
 				</NavLink>
 				<button
 					className="navbar-toggler toggler-button"
@@ -35,18 +35,18 @@ const Navbar = (props) => {
 				<div className="collapse navbar-collapse movienest-collapse-menu" id="navbarSupportedContent">
 					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0 movienest-ul" >
 						<li className="nav-item">
-							<NavLink className="nav-link active" aria-current="page" to="/candystore">
-								Snack List
+							<NavLink className="nav-link" aria-current="page" to="/candystore">
+								My Snacks
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="#">
+							<NavLink className="nav-link " to="/favorites">
 								Favorites
 							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink className="nav-link" to="#">
-								Your WatchLists
+							<NavLink className="nav-link" to="/watchlist">
+								My WatchList
 							</NavLink>
 						</li>
 					</ul>
@@ -58,7 +58,7 @@ const Navbar = (props) => {
 							placeholder="Search"
 							aria-label="Search"
 						/>
-						<button className="btn btn-outline-primary" type="submit">
+						<button className="btn btn-outline-warning" type="submit">
 							Search
 						</button>
 					</form>

@@ -87,10 +87,10 @@ const Login = (props) => {
 								disabled={!loginForm.email || loginForm.password.length < 6}
 							>Log in</button>
 						</div>
-						<div className='mt-5'>
+						<div className='mt-5 sign-up-msg'>
 							Don't have an account?
 							<div>
-								<NavLink to='/accounts/register'><span className='fw-bold'>Sign up</span></NavLink>
+								<NavLink className='sign-up-msg-link' to='/accounts/register'><span className='fw-bold sign-up-msg-btn'>Sign up</span></NavLink>
 							</div>
 						</div>
 					</form>

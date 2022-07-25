@@ -4,7 +4,7 @@ import "./Footer.css"
 
 const Footer = () => {
 	return (
-		<div className='footer mt-3'>
+		<div className='footer'>
 			<ul className='footer-links mt-2'>
 				<Link to='/'>Home</Link>
 				<Link to='#'>About</Link>

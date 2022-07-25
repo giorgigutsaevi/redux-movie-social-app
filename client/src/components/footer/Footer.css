@@ -5,27 +5,24 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #fffafa;
-	border-top: 1px solid rgb(233, 230, 230);
+	background-color: #17000c;
+	border-top: 1px solid #c59008c0;
 }
-
-/* .footer-links{
-	border: 2px solid red;
-} */
 
 .footer-links a{
 	text-decoration: none;
 	margin-right: 10px;
-	color: #b25068e1;
+	color: #f1f1f1;
 	font-weight: bold;
 }
 
 .footer-links a:hover{
 	text-decoration: none;
+	color: #c59108;
 	margin-right: 10px;
 }
 
 .footer-copyright-text{
 	font-weight: bold;
-	color: gray;
+	color: #f1f1f1a9;
 }
