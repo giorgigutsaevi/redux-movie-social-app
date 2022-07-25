@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
-import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd, AiOutlineMenu } from "react-icons/ai";
 import { logoutRequest } from '../../store/user/actions'
 
 const Navbar = (props) => {
+
 	const navigate = useNavigate();
-
-	useEffect(() => {
-
-	})
 
 	const handleLogout = async () => {
 		props.dispatch(logoutRequest())
@@ -19,13 +16,13 @@ const Navbar = (props) => {
 	}
 
 	return (
-		<nav className="navbar navbar-expand-lg bg-light">
-			<div className="container-fluid">
+		<nav className="navbar navbar-expand-lg bg-light movinest-navbar">
+			<div className="container-fluid movienest-container">
 				<NavLink className="navbar-brand" to="/">
 					MovieNest
 				</NavLink>
 				<button
-					className="navbar-toggler"
+					className="navbar-toggler toggler-button"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent"
@@ -33,10 +30,10 @@ const Navbar = (props) => {
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span className="navbar-toggler-icon" />
+					<span className="navbar-toggler-icon"><AiOutlineMenu/></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+				<div className="collapse navbar-collapse movienest-collapse-menu" id="navbarSupportedContent">
+					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0 movienest-ul" >
 						<li className="nav-item">
 							<NavLink className="nav-link active" aria-current="page" to="/candystore">
 								Snack List
@@ -66,8 +63,8 @@ const Navbar = (props) => {
 						</button>
 					</form>
 
-					<ul className="navbar-nav mb-5 mb-lg-1 mx-auto">
-						{props?.user && <li className="nav-item dropdown">
+					<ul className="navbar-nav mb-5 mb-lg-1">
+						{props?.user && <li className="nav-item dropdown account-dropdown">
 							<Link
 								className="nav-link dropdown-toggle dropdown-link"
 								to="#"

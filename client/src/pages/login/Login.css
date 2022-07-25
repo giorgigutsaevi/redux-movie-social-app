@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 
 .login-form-container{
-	min-height: 100vh;
+	min-height: 96vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #eaf6f6b8;
+	background-color: #fffafa;
 }
 
 .login-form{

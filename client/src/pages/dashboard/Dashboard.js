@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchRequest } from '../../store/movies/actions'
 import MovieCard from '../../components/movieCard/MovieCard'
-
+import "./Dashboard.css"
 
 const Dashboard = (props) => {
 
@@ -39,16 +39,13 @@ const Dashboard = (props) => {
 	})
 
 	return (
-		<div className='container'>
+		<div className='container-fluid dashboard'>
 			<div className='row'>
 				{movies}
 			</div>
 		</div>
 	)
 }
-
-
-
 
 const mapStateToProps = (state) => {
 	// console.log(state.movies.movieList)
