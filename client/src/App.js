@@ -10,6 +10,8 @@ import axios from 'axios';
 import { connect } from 'react-redux'
 import { persistLoginRequest } from './store/user/actions';
 import { parseJwt } from "./utils/parseJWT"
+import Footer from './components/footer/Footer';
+import PrivateRoute from './components/shared/privateRoute/PrivateRoute';
 
 axios.defaults.withCredentials = true;
 
@@ -32,11 +34,17 @@ function App(props) {
     <div>
       {pathname !== "/accounts/register" && pathname !== "/accounts/login" && <Navbar />}
       <Routes>
-        <Route exact path='/' element={<Dashboard />} />
+        <Route exact path='/' element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+        />
         <Route path='/accounts/register' element={<Signup />} />
         <Route path='/accounts/login' element={<Login />} />
         <Route path='/candystore' element={<CandyStore />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

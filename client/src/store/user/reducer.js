@@ -1,4 +1,4 @@
-import { CREATE_REQUEST, CREATE_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR, PERSIST_LOGIN_REQUEST, PERSIST_LOGIN_SUCCESS } from "./types"
+import { CREATE_REQUEST, CREATE_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR, PERSIST_LOGIN_REQUEST, PERSIST_LOGIN_SUCCESS, VERIFY_TOKEN_REQUEST, VERIFY_TOKEN_SUCCESS } from "./types"
 
 const initialState = {
 	user: null,
@@ -15,6 +15,7 @@ export default function userReducer(state = initialState, action) {
 		case LOGIN_REQUEST:
 		case LOGOUT_REQUEST:
 		case PERSIST_LOGIN_REQUEST:
+		case VERIFY_TOKEN_REQUEST:
 			return { ...state, error: false, isLoggedIn: false, }
 
 		case LOGIN_ERROR:
@@ -33,6 +34,10 @@ export default function userReducer(state = initialState, action) {
 		case LOGOUT_SUCCESS:
 			// make user = null to complete the logout process
 			return { ...state, user: action.payload, authenticationToken: "", isLoggedIn: false }
+
+		case VERIFY_TOKEN_SUCCESS:
+			console.log(action.payload, 'VERIFY_TOKEN_SUCCESS')
+			return {...state, isLoggedIn: action.payload}
 
 		default:
 			return { ...state }

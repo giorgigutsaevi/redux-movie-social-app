@@ -20,7 +20,7 @@ export const loginUser = async (req, res) => {
 		}
 
 		const isPasswordCorrect = await bcrypt.compare(password, existingUser.password)
-	
+
 		if (!isPasswordCorrect) {
 			return res.status(401).json({ errorMessage: "Wrong credentials, please check your email or password!" });
 		}
@@ -38,7 +38,7 @@ export const loginUser = async (req, res) => {
 
 	} catch (error) {
 		console.log(error);
-		res.status(500).json({errorMessage: 'An error occured.'});
+		res.status(500).json({ errorMessage: 'An error occured.' });
 	}
 }
 
@@ -48,4 +48,17 @@ export const logoutUser = (req, res) => {
 		expires: new Date(0)
 	})
 		.send();
+}
+
+export const isAuthenticated = async (req, res) => {
+	try {
+		const token = req.cookies.token;
+		if (!token) return res.json(false);
+
+		jwt.verify(token, process.env.JWT_SECRET);
+		res.send(true);
+
+	} catch (error) {
+		res.json(false)
+	}
 }

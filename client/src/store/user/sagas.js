@@ -1,12 +1,13 @@
 import { all, fork, put, takeEvery } from 'redux-saga/effects'
 import axios from 'axios'
-import { createUserSuccess, loginError, loginSuccess, logoutSuccess, persistLoginError, persistLoginSuccess } from './actions.js'
-import { CREATE_REQUEST, LOGIN_REQUEST, LOGOUT_REQUEST, PERSIST_LOGIN_REQUEST } from "./types"
+import { createUserSuccess, loginError, loginSuccess, logoutSuccess, persistLoginError, persistLoginSuccess, verifyTokenError, verifyTokenSuccess } from './actions.js'
+import { CREATE_REQUEST, LOGIN_REQUEST, LOGOUT_REQUEST, PERSIST_LOGIN_REQUEST, VERIFY_TOKEN_REQUEST } from "./types"
 
 const SIGNUP_API = "http://localhost:8000/accounts/register"
 const LOGIN_API = "http://localhost:8000/accounts/login"
 const LOGOUT_API = "http://localhost:8000/accounts/logout"
 const PERSIST_LOGIN_URI = "http://localhost:8000/accounts/user/"
+const VERIFY_TOKEN_URI = "http://localhost:8000/accounts/authenticated/"
 
 function* handleRegisterUser(action) {
 	console.log('from handleRegisterUser saga:', action.payload)
@@ -45,7 +46,7 @@ function* handlePersistLogin(action) {
 
 	} catch (error) {
 		yield put(persistLoginError(error))
-	}	
+	}
 }
 
 function* handleLogoutUser() {
@@ -55,6 +56,17 @@ function* handleLogoutUser() {
 
 	} catch (error) {
 		yield console.log(error)
+	}
+}
+
+function* handleVerifyToken() {
+	try {
+		const res = yield axios.get(VERIFY_TOKEN_URI)
+		console.log("HANDLE VERIFY TOKEN", res.data)
+		yield put(verifyTokenSuccess(res.data))
+
+	} catch (error) {
+		yield put(verifyTokenError(error))
 	}
 }
 
@@ -70,8 +82,12 @@ function* watchHandleLogoutuser() {
 	yield takeEvery(LOGOUT_REQUEST, handleLogoutUser)
 }
 
-function* watchPersistLogin(){
+function* watchPersistLogin() {
 	yield takeEvery(PERSIST_LOGIN_REQUEST, handlePersistLogin)
+}
+
+function* watchHandleVerifyToken() {
+	yield takeEvery(VERIFY_TOKEN_REQUEST, handleVerifyToken)
 }
 
 
@@ -81,6 +97,7 @@ function* usersSaga() {
 		fork(watchHandleLoginUser),
 		fork(watchHandleLogoutuser),
 		fork(watchPersistLogin),
+		fork(watchHandleVerifyToken),
 	])
 }
 
