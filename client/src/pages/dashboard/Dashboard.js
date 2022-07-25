@@ -23,7 +23,6 @@ const Dashboard = (props) => {
 			<div className="alert alert-danger" role="alert">
 				A simple danger alert—check it out!
 			</div>
-
 		)
 	}
 
@@ -41,6 +40,7 @@ const Dashboard = (props) => {
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
+			<h3 className='text-center mt-5 dashboard-trending'>Trending Now 💫</h3>
 				{movies}
 			</div>
 		</div>

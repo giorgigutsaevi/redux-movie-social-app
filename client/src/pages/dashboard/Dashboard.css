@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .dashboard {
 	background-color: #2d0112;
 	padding-bottom: 25px;
 	margin-top: 50px;
+}
+
+.dashboard-trending{
+	color: #f1f1f1;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
 }
