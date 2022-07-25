@@ -57,7 +57,7 @@ const Dashboard = (props) => {
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
-				<h3 className='text-center mt-5 dashboard-trending'>Trending Now 💫</h3>
+				<h3 className='text-center mt-5 dashboard-trending'>Trending Now <span><img className='trending-gif' src='/images/star.gif' alt='trending-gif'/></span></h3>
 				{movies}
 				<div className='text-center mt-5'>
 					{props.currentPage > 1 && <button className='pagination-button me-3' onClick={handlePrevPage}><BsChevronLeft /> Previous Page</button>}
