@@ -8,10 +8,9 @@ const BASE_URL = "https://api.themoviedb.org/3"
 const COURSE_API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${MOVIE_DB_API_KEY}&page=`
 
 // WORKER
-
 // FETCH - saga
 function* handleFetch(action) {
-	console.log(action.payload)
+	// console.log(action.payload)
 	try {
 		const response = yield call(callApi, COURSE_API_URL + action.payload, 'GET');
 		yield put(fetchSuccess(response))

@@ -7,7 +7,7 @@ const initialState = {
 	status: undefined,
 	movie: undefined,
 	currentPage: 1,
-
+	numOfPages: 0,
 }
 
 export default function movieReducer(state = initialState, action) {
@@ -17,7 +17,7 @@ export default function movieReducer(state = initialState, action) {
 			return { ...state, isLoading: true }
 
 		case FETCH_SUCCESS:
-			return {...state, isLoading: false, movieList: action.payload, currentPage: action.payload.page}
+			return {...state, isLoading: false, movieList: action.payload, currentPage: action.payload.page, numOfPages: action.payload.total_pages}
 
 		default:
 			return { ...state }

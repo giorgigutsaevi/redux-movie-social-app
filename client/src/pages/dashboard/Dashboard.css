@@ -29,3 +29,15 @@
 .trending-gif{
 	width: 40px;
 }
+
+.spinner-container{
+	border: 2px solid red;
+	min-height: 96vh;
+	display: flex;
+	justify-content: center;
+	background-color: #2d0112;
+}
+
+.my-spinner{
+	margin-top: 100px;
+}

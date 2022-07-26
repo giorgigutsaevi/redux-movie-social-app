@@ -18,7 +18,7 @@ const MovieCard = (props) => {
 					component="img"
 					height="330"
 					image={`${IMAGE_URL}${props.movieData.poster_path}`}
-					alt="green iguana"
+					alt="movie poster"
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h6" component="div" style={{ color: "#f5f5f5" }}>
