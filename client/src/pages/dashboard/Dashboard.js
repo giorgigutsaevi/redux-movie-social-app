@@ -3,19 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { fetchRequest } from '../../store/movies/actions'
 import MovieCard from '../../components/movieCard/MovieCard'
-import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
-
+import DashboardPagination from '../../components/pagination/DashboardPagination';
 import "./Dashboard.css"
 
 const Dashboard = (props) => {
-	const [currentPageNum, setCurrentPageNum] = useState(1)
-
-	// console.log(props.movies.results)
+	const [currentPageNum, setCurrentPageNum] = useState(props.currentPage)
 
 	useEffect(() => {
 		props.dispatch(fetchRequest(currentPageNum))
 	}, [currentPageNum])
-
 
 	if (props.isLoading) {
 		return (
@@ -24,7 +20,6 @@ const Dashboard = (props) => {
 					<span className="sr-only"></span>
 				</div>
 			</div>
-
 		)
 	}
 
@@ -39,7 +34,7 @@ const Dashboard = (props) => {
 	// console.log(props.movies.results)
 
 	let movies = null;
-	movies = props?.movies?.results.map((movie) => {
+	movies = props?.movies?.results?.map((movie) => {
 		return (
 			<MovieCard
 				key={movie.id}
@@ -47,25 +42,16 @@ const Dashboard = (props) => {
 			/>)
 	})
 
-	const handleNextPage = () => {
-		setCurrentPageNum(prevState => prevState + 1)
-		window.scrollTo(0, 0)
-	}
-
-	const handlePrevPage = () => {
-		setCurrentPageNum(prevState => prevState - 1);
-		window.scrollTo(0, 0)
-	}
-
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
 				<h3 className='text-center mt-5 dashboard-trending'>Trending Now <span><img className='trending-gif' src='/images/star.gif' alt='trending-gif' /></span></h3>
 				{movies}
-				<div className='text-center mt-5'>
-					{<button className='pagination-button me-3' disabled={props.currentPage === 1} onClick={handlePrevPage}><BsChevronLeft /> Previous Page</button>}
-					<button disabled={props.currentPage === 100} className='pagination-button' onClick={handleNextPage}>Next Page <BsChevronRight /></button>
-				</div>
+
+				<DashboardPagination
+					setCurrentPageNum={setCurrentPageNum}
+					currentPageNum={currentPageNum}
+				/>
 
 			</div>
 		</div>
@@ -73,11 +59,11 @@ const Dashboard = (props) => {
 }
 
 const mapStateToProps = (state) => {
-	// console.log(state.movies.movieList)
 	return {
 		movies: state.movies.movieList,
 		isLoading: state.movies.isLoading,
 		currentPage: state.movies.currentPage,
+		numOfPages: state.movies.numOfPages
 	}
 }
 

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .dashboard {
-	background-color: #2d0112;
+	/* background-color: #2d0112; */
 	padding-bottom: 25px;
 	margin-top: 50px;
 }
@@ -31,7 +31,6 @@
 }
 
 .spinner-container{
-	border: 2px solid red;
 	min-height: 96vh;
 	display: flex;
 	justify-content: center;
