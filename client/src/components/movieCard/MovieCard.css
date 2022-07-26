@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 .moviecard{
 	position: relative;
@@ -19,8 +20,8 @@
 	position: absolute;
 	right: 15px;
 	bottom: 10px;
-	background-color: #383838;
-	color: #F0A500;
+	background-color: #0e1014;
+	color: #f2f4fa;
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
@@ -37,6 +38,10 @@
 .readmore-button {
 	border: none;
 	background-color: transparent;
-	color: #F0A500;
+	color: #fbd300;
 	font-weight: bold;
+}
+
+.movie-overview{
+	font-family: 'Inter', sans-serif;
 }

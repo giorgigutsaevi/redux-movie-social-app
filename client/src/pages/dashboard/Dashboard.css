@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .dashboard {
-	/* background-color: #2d0112; */
+	background-color: #0e1014;
+	min-height: 94;
 	padding-bottom: 25px;
-	margin-top: 50px;
 }
 
 .dashboard-trending{
 	color: #f1f1f1;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
+	margin-top: 100px !important;
+	padding: 20px;
 }
 
 .pagination-button{
@@ -34,7 +36,7 @@
 	min-height: 96vh;
 	display: flex;
 	justify-content: center;
-	background-color: #2d0112;
+	background-color: #0e1014;
 }
 
 .my-spinner{

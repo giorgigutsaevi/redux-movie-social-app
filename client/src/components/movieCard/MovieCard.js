@@ -13,10 +13,10 @@ const MovieCard = (props) => {
 	const IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 	return (
 		<div className='col-md-3 moviecard'>
-			<Card sx={{ maxWidth: 350, minHeight: 450, background: '#17000c' }} className='mt-3 p-1 card'>
+			<Card sx={{ maxWidth: 350, minHeight: 450, background: '#1a1d29' }} className='mt-3 p-1 card'>
 				<CardMedia
 					component="img"
-					height="330"
+					height="450"
 					image={`${IMAGE_URL}${props.movieData.poster_path}`}
 					alt="movie poster"
 				/>
@@ -24,7 +24,7 @@ const MovieCard = (props) => {
 					<Typography gutterBottom variant="h6" component="div" style={{ color: "#f5f5f5" }}>
 						{props.movieData.original_title}
 					</Typography>
-					<Typography style={{ color: "#f5f5f5" }} variant="body2" color="text.secondary">
+					<Typography style={{ color: "#f5f5f5" }} variant="body2" color="text.secondary" className='movie-overview'>
 						{readMore ? props.movieData.overview : `${props.movieData.overview.substring(0, 140)}...`}
 						<button className='readmore-button' onClick={() => setReadMore(!readMore)}>
 							{readMore ? "show less" : "show more"}

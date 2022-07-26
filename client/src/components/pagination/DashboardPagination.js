@@ -15,15 +15,21 @@ const DashboardPagination = (props) => {
 	return (
 		<div>
 			<Stack spacing={2}>
-				<Typography className='text-center mt-3'>Page: {props.currentPage}</Typography>
+				<Typography className='text-center mt-3 page-indicator'>Page: {props.currentPage}</Typography>
 				<Pagination
 					showFirstButton
 					showLastButton
 					className='dashboard-pagination'
 					count={Math.ceil(props.numOfPages / 80)}
 					page={props.currentPage}
-					color="secondary"
+					variant="outlined"
+					color="primary"
+					size="large"
 					onChange={(e, value) => handleChange(value)}
+					sx={
+						{ button: { color: '#f2f4fa' }, div: { color: '#f2f4fa' } }
+					}
+
 				/>
 			</Stack>
 		</div>

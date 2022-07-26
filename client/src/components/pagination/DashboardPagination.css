@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-.dashboard-pagination{
+.dashboard-pagination {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
 }
+
+.page-indicator {
+	color: #f2f4fa;
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+}
+

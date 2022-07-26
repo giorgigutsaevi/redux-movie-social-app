@@ -45,14 +45,12 @@ const Dashboard = (props) => {
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
-				<h3 className='text-center mt-5 dashboard-trending'>Trending Now <span><img className='trending-gif' src='/images/star.gif' alt='trending-gif' /></span></h3>
+				<h3 className='text-center dashboard-trending'>Trending Now</h3>
 				{movies}
-
 				<DashboardPagination
 					setCurrentPageNum={setCurrentPageNum}
 					currentPageNum={currentPageNum}
 				/>
-
 			</div>
 		</div>
 	)

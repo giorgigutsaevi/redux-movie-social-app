@@ -3,7 +3,11 @@ import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
-import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd, AiOutlineMenu, AiOutlineFire, AiOutlineStar } from "react-icons/ai";
+import { GiPopcorn } from "react-icons/gi";
+import { BsBookmarkHeart } from "react-icons/bs";
+
+import { RiMovie2Line } from "react-icons/ri";
 import { logoutRequest } from '../../store/user/actions'
 
 const Navbar = (props) => {
@@ -19,7 +23,7 @@ const Navbar = (props) => {
 		<nav className="navbar navbar-expand-lg fixed-top movienest-navbar">
 			<div className="container-fluid movienest-container">
 				<NavLink className="navbar-brand" to="/">
-					MovieNest 🍿
+					MovieNest <RiMovie2Line />
 				</NavLink>
 				<button
 					className="navbar-toggler toggler-button"
@@ -30,28 +34,33 @@ const Navbar = (props) => {
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
-					<span className="navbar-toggler-icon"><AiOutlineMenu/></span>
+					<span className="navbar-toggler-icon"><AiOutlineMenu /></span>
 				</button>
 				<div className="collapse navbar-collapse movienest-collapse-menu" id="navbarSupportedContent">
 					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0 movienest-ul" >
 						<li className="nav-item">
+							<NavLink className="nav-link" aria-current="page" to="/dashboard">
+								<AiOutlineFire size={22}/> Trending Movies
+							</NavLink>
+						</li>
+						<li className="nav-item">
 							<NavLink className="nav-link" aria-current="page" to="/candystore">
-								My Snacks
+								<GiPopcorn size={22}/> My Snacks
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink className="nav-link " to="/favorites">
-								Favorites
+								<AiOutlineStar size={22}/> Favorites
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink className="nav-link" to="/watchlist">
-								My WatchList
+								<BsBookmarkHeart size={22}/> My WatchList
 							</NavLink>
 						</li>
 					</ul>
 					}
-					<form className="d-flex me-5" role="search">
+					{/* <form className="d-flex me-5" role="search">
 						<input
 							className="form-control me-2"
 							type="search"
@@ -61,7 +70,7 @@ const Navbar = (props) => {
 						<button className="btn btn-outline-warning" type="submit">
 							Search
 						</button>
-					</form>
+					</form> */}
 
 					<ul className="navbar-nav mb-5 mb-lg-1">
 						{props?.user && <li className="nav-item dropdown account-dropdown">

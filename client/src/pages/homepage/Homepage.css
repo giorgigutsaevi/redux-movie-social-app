@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.homepage{
+	min-height: 94vh;
+	background-image: url("https://i.imgur.com/ZVeAT9R.jpg");
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+.homepage-title{
+	position: absolute;
+	top: 13%;
+	color: #f2f4fa;
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+	padding: 20px;
+	width: 70%;
+}
+
+.homepage-sub-title{
+	position: absolute;
+	top: 20%;
+	color: #f2f4fa;
+	font-family: 'Inter', sans-serif;
+	padding: 20px;
+	width: 60%;
+}
+
+.homepage-socials{
+	position: absolute;
+	padding: 20px;
+	bottom: 15%;
+	color: #f2f4fa;
+	display: flex;
+	flex-direction: column;
+}
+
+.homepage-socials-icons{
+	color: #f2f4fa;
+	margin-top: 17px;
+}
+
+.homepage-call-to-action{
+	position: absolute;
+	padding: 20px;
+	top:30%;
+}
+
+.watchlist-button{
+	/* background-color: #ff0040; */
+	background-color: transparent;
+	border: 2px solid #fbd300;
+	padding: 15px 30px;
+	color: #f2f4fa;
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	border-radius: 7px;
+	font-size: 20px;
+	transition: 0.4s all ease-in-out;
+}
+
+.watchlist-button:hover{
+	background-color: #fbd100c0;
+}

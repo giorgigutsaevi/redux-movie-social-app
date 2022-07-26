@@ -12,6 +12,7 @@ import { persistLoginRequest } from './store/user/actions';
 import { parseJwt } from "./utils/parseJWT"
 import Footer from './components/footer/Footer';
 import PrivateRoute from './components/shared/privateRoute/PrivateRoute';
+import Homepage from './pages/homepage/Homepage';
 
 axios.defaults.withCredentials = true;
 
@@ -34,7 +35,8 @@ function App(props) {
     <div>
       {pathname !== "/accounts/register" && pathname !== "/accounts/login" && <Navbar />}
       <Routes>
-        <Route exact path='/' element={
+        <Route exact path='/' element={<Homepage/>}/>
+        <Route path='/dashboard' element={
           <PrivateRoute>
             <Dashboard />
           </PrivateRoute>
