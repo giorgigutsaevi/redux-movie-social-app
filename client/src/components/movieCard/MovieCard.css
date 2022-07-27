@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 .moviecard{
 	position: relative;
 	transition: top 1s ease;
@@ -38,10 +38,10 @@
 .readmore-button {
 	border: none;
 	background-color: transparent;
-	color: #fbd300;
+	color: #7f66de;
 	font-weight: bold;
 }
 
 .movie-overview{
-	font-family: 'Inter', sans-serif;
+	font-family: 'Oxygen', sans-serif;
 }

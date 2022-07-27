@@ -2,7 +2,7 @@ import React from 'react'
 
 const ErrorMessage = (props) => {
 	return (
-		<div className="alert alert-danger alert-dismissible fade show" role="alert" style={{ width: "16rem" }} >
+		<div className="alert alert-danger alert-dismissible fade show" role="alert" style={{ width: "30rem" }} >
 			<strong>Holy guacamole!</strong> {props.text}
 			<button
 				type="button"

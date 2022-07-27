@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .dashboard {
 	background-color: #0e1014;
@@ -8,10 +8,10 @@
 
 .dashboard-trending{
 	color: #f1f1f1;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: bold;
 	margin-top: 100px !important;
-	padding: 20px;
+	padding: 25px;
 }
 
 .pagination-button{

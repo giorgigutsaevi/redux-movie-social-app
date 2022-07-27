@@ -45,7 +45,7 @@ const Dashboard = (props) => {
 	return (
 		<div className='container-fluid dashboard'>
 			<div className='row'>
-				<h3 className='text-center dashboard-trending'>Trending Now</h3>
+				<h3 className='dashboard-trending'>Trending Movies</h3>
 				{movies}
 				<DashboardPagination
 					setCurrentPageNum={setCurrentPageNum}

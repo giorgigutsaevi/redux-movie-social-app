@@ -13,9 +13,9 @@
 }
 
 .navbar-brand:hover {
-	background-color: #fbd100c0;
+	background-color: #c8235d;
 	color: #f2f4fa;
-
+	border-radius: 5px;
 }
 
 .nav-item {
@@ -27,6 +27,7 @@
 	font-weight: bold;
 	border: 2px solid transparent;
 	padding: 10px;
+	transition: 0.3s all ease;
 }
 
 .nav-link-btn {
@@ -58,19 +59,21 @@
 }
 
 .movienest-navbar a.active {
-	/* background-color: #ff0040; */
-	border: 2px solid #fbd300;
 	border-radius: 5px;
-
+	background-color: #c8235d;
 }
 
 
 .movienest-container .nav-link.active {
 	border-radius: 5px;
+	background-color: #c8235d;
+	color: #f2f4fa;
 }
 
 .movienest-container .nav-link:hover {
 	transition: 0.3s all ease;
-	border: 2px solid #fbd100c0 !important;
-	border-radius: 3px;
+	border: 2px solid #c8235d !important;
+	border-radius: 5px;
+	background-color: #c8235d;
+	color: #f2f4fa;
 }

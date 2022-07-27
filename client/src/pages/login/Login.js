@@ -87,7 +87,7 @@ const Login = (props) => {
 								disabled={!loginForm.email || loginForm.password.length < 6}
 							>Log in</button>
 						</div>
-						<div className='mt-5 sign-up-msg'>
+						<div className='mt-5 sign-up-msg text-center'>
 							Don't have an account?
 							<div>
 								<NavLink className='sign-up-msg-link' to='/accounts/register'><span className='fw-bold sign-up-msg-btn'>Sign up</span></NavLink>

@@ -20,7 +20,7 @@
 
 .homepage-sub-title{
 	position: absolute;
-	top: 20%;
+	top: 22%;
 	color: #f2f4fa;
 	font-family: 'Inter', sans-serif;
 	padding: 20px;
@@ -50,7 +50,7 @@
 .watchlist-button{
 	/* background-color: #ff0040; */
 	background-color: transparent;
-	border: 2px solid #fbd300;
+	border: 2px solid #f2f4fa;
 	padding: 15px 30px;
 	color: #f2f4fa;
 	font-family: 'Inter', sans-serif;
@@ -61,5 +61,6 @@
 }
 
 .watchlist-button:hover{
-	background-color: #fbd100c0;
+	background-color: #c8235d;
+	border: 2px solid #c8235d;
 }
