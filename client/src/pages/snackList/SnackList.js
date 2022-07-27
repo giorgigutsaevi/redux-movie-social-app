@@ -7,6 +7,7 @@ import { createSnackRequest, fetchRequest } from '../../store/snacks/actions'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SnackModal from '../../components/snackModal.js/SnackModal';
 
 
 const SnackList = (props) => {
@@ -55,9 +56,7 @@ const SnackList = (props) => {
 		})
 	}
 
-	// console.log(props?.snacks)
 	let snackElements = null;
-
 	if (props?.snacks && props?.snacks.length > 0) {
 		snackElements = props?.snacks.map((snack, index) => {
 			return (
@@ -68,15 +67,30 @@ const SnackList = (props) => {
 
 	return (
 		<div className='snacklist'>
-			<h3 className='text-center p-3 snacklist-title'>Snack Wishlist</h3>
-			<h5 className='text-center w-50 mx-auto'>A good movie is so much better with a good snack. This is a place to gather all your favourite snacks and have a neat little compiled list.</h5>
 
+			<h3 className='p-4 snacklist-title'>Snack Wishlist</h3>
+			<h5 className='p-4 w-50 snacklist-sub-title'>A good movie is so much better with a good snack. This is a place to gather all your favourite snacks and have a neat little compiled list.</h5>
+			<h6 className='p-4 w-50 snacklist-text'>All your favorite snacks in one, consolidated place.</h6>
+			<div className='p-4'>
+				<button
+					type="button"
+					className="btn btn-primary modal-btn"
+					data-bs-toggle="modal"
+					data-bs-target="#exampleModal"
+				>
+					Add a snack
+				</button>
+			</div>
+			<SnackModal
+				handleSubmit={handleSubmit}
+				handleChange={handleChange}
+				snackData={snackData}
+			/>
+			<ToastContainer />
 			<div className='snacklist-container'>
-
-
+				{/* 
 				<form onSubmit={handleSubmit}>
 
-					<ToastContainer />
 					<div className='snacklist-form'>
 						<h5 className='snacklist-form-title'>Add a snack:</h5>
 						<label className='mt-2'>Candy</label>
@@ -106,10 +120,9 @@ const SnackList = (props) => {
 							name='price'
 							value={snackData.price}
 						/>
-
 						<button className='mt-2 form-btn' type='submit'>Add</button>
 					</div>
-				</form>
+				</form> */}
 
 				<div className='snack-list'>
 					<div className='container'>
@@ -120,7 +133,9 @@ const SnackList = (props) => {
 					</div>
 
 				</div>
-
+				<div>
+					<img src='/images/snack.png' alt='snack-img' />
+				</div>
 			</div>
 		</div>
 	)

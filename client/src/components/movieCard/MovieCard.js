@@ -33,7 +33,7 @@ const MovieCard = (props) => {
 					</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="medium">Learn More</Button>
+					<Button size="medium" style={{ color: "#7f66de" }}>Learn More</Button>
 					<div className='imdb-rating'><p className='rating text-center'>{props.movieData.vote_average}</p></div>
 				</CardActions>
 			</Card>

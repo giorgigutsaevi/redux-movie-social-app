@@ -48,7 +48,6 @@
 }
 
 .watchlist-button{
-	/* background-color: #ff0040; */
 	background-color: transparent;
 	border: 2px solid #f2f4fa;
 	padding: 15px 30px;
@@ -61,6 +60,6 @@
 }
 
 .watchlist-button:hover{
-	background-color: #c8235d;
-	border: 2px solid #c8235d;
+	background-color: #6b3ec2;
+	border: 2px solid #6b3ec2;
 }

@@ -23,7 +23,7 @@ background-color: #d4d4d4;;
 .signup-form-title{
 	font-family: 'Inter', sans-serif;
 	font-weight: 600;
-	color: #c8235d;
+	color: #f1f1f1;
 }
 
 .signup-form-secondary-title{
@@ -35,7 +35,7 @@ background-color: #d4d4d4;;
 }
 
 .log-in-msg-btn{
-	color: #c8235d;
+	color: #6b3ec2;
 }
 
 .log-in-msg-btn:hover{
@@ -71,11 +71,11 @@ background-color: #d4d4d4;;
 .register-btn {
 	border: none;
 	padding: 6px 40px;
-	background-color: #c8235d;
+	background-image: linear-gradient(to right top, #5482e9, #577ee6, #5b7be4, #5e77e1, #6173de, #616edc, #616ad9, #6165d7, #5e5ed5, #5c56d2, #5a4fcf, #5847cc);
 	color: whitesmoke;
 	border-radius: 5px;
 }
 
-button[disabled]{
-	background-color: #c8235d52;
+.register-btn[disabled]{
+	background-image: linear-gradient(to right top, #5482e9, #577ee6, #5b7be4, #5e77e1, #6173de, #616edc, #616ad9, #6165d7, #5e5ed5, #5c56d2, #5a4fcf, #5847cc);
 }

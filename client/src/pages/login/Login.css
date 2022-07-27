@@ -23,7 +23,8 @@
 
 .form-title{
 	font-family: 'Inter', sans-serif;
-	color: #c8235d;
+	color: #f1f1f1;
+	font-weight: 700;
 }
 
 .form-secondary-title{
@@ -39,7 +40,7 @@
 }
 
 .sign-up-msg-btn{
-	color: #c8235d;
+	color: #6b3ec2;
 }
 .sign-up-msg-btn:hover{
 	color: #A5BECC;

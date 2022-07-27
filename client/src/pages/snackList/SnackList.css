@@ -1,45 +1,39 @@
-/* @import url("https://use.typekit.net/ykv0mtm.css"); */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .snacklist {
-	min-height: 100vh;
-	background-color: #f7fef9;
+	min-height: 95vh;
+	background-color: #0e1014;
+	font-family: 'Inter', sans-serif;
 }
 
 .snacklist-container {
-	/* border: 3px solid red; */
+	display: flex;
 }
 
 .snacklist-title {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: bolder;
+	color: #f2f4fa;
+	margin-top: 100px;
 }
 
-.snacklist-form {
-	display: flex;
-	flex-direction: column;
-	padding: 25px;
-	width: 40%;
-	margin: auto;
+.snacklist-sub-title {
+	color: #f2f4fa;
 }
 
-.snacklist-form-title {
-	color: #3a6b59;
-	font-weight: bold;
-	font-family: 'Poppins', sans-serif;
-}
-
-.snacklist-form label {
-	color: #3a6b59;
-	font-weight: bold;
-	font-family: 'Poppins', sans-serif;
-}
-
-.snacklist-form input {
-	background-color: #f7fef9;
-	font-family: 'Poppins', sans-serif;
+.snacklist-text {
+	font-weight: 600;
+	color: #f2f4fa;
 }
 
 .snack-list {
-	/* border: 2px solid green; */
+	width: 50%;
+	height: 45vh;
+	overflow-y : scroll;
+}
+
+.modal-btn {
+	background-image: linear-gradient(to right top, #5482e9, #577ee6, #5b7be4, #5e77e1, #6173de, #616edc, #616ad9, #6165d7, #5e5ed5, #5c56d2, #5a4fcf, #5847cc);
+	border: none;
+	padding: 10px 30px;
 }

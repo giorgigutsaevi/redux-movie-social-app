@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
@@ -6,12 +6,10 @@ import "./Navbar.css"
 import { AiOutlineUser, AiOutlineLogout, AiOutlineUserAdd, AiOutlineMenu, AiOutlineFire, AiOutlineStar } from "react-icons/ai";
 import { GiPopcorn } from "react-icons/gi";
 import { BsBookmarkHeart } from "react-icons/bs";
-
-import { RiMovie2Line } from "react-icons/ri";
 import { logoutRequest } from '../../store/user/actions'
 
 const Navbar = (props) => {
-
+	const [scrolled, setScrolled] = useState(false);
 	const navigate = useNavigate();
 
 	const handleLogout = async () => {
@@ -19,11 +17,29 @@ const Navbar = (props) => {
 		navigate('accounts/login')
 	}
 
+	const handleScroll = () => {
+		const offset = window.scrollY;
+		if (offset > 50) {
+			setScrolled(true);
+		} else {
+			setScrolled(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	})
+
+
 	return (
-		<nav className="navbar navbar-expand-lg fixed-top movienest-navbar">
+		<nav className={scrolled ? "navbar navbar-expand-lg fixed-top movienest-navbar scrolled" : "navbar navbar-expand-lg fixed-top movienest-navbar"}>
 			<div className="container-fluid movienest-container">
 				<NavLink className="navbar-brand" to="/">
-					MovieNest <RiMovie2Line />
+					MovieNest
 				</NavLink>
 				<button
 					className="navbar-toggler toggler-button"
@@ -40,22 +56,22 @@ const Navbar = (props) => {
 					{props?.user && <ul className="navbar-nav me-auto mb-2 mb-lg-0 movienest-ul" >
 						<li className="nav-item">
 							<NavLink className="nav-link" aria-current="page" to="/dashboard">
-								<AiOutlineFire size={22}/> Trending Movies
+								<AiOutlineFire size={22} /> Trending Movies
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink className="nav-link" aria-current="page" to="/candystore">
-								<GiPopcorn size={22}/> My Snacks
+								<GiPopcorn size={22} /> My Snacks
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink className="nav-link " to="/favorites">
-								<AiOutlineStar size={22}/> Favorites
+								<AiOutlineStar size={22} /> Favorites
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink className="nav-link" to="/watchlist">
-								<BsBookmarkHeart size={22}/> My WatchList
+								<BsBookmarkHeart size={22} /> My WatchList
 							</NavLink>
 						</li>
 					</ul>

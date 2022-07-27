@@ -17,13 +17,13 @@ const SnackCard = (props) => {
 	// console.log(props.snacks)
 
 	return (
-		<div className="card col-md-2 mt-3 me-3" style={{ width: "15rem" }}>
+		<div className="card col-md-2 me-4 ms-4 mt-3" style={{ width: "16rem", height: "10rem" }}>
 			<div className="card-body">
 				<h5 className="card-title">{props.title}</h5>
 				<p className="card-text">
 					{props.category}
 				</p>
-				<div>
+				<div className='mt-2'>
 					<button className="btn btn-warning me-2">
 						Edit
 						<BiEdit/>
