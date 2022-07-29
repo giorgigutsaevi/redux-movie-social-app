@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import "./MovieCard.css"
 
 const MovieCard = (props) => {
@@ -14,6 +15,7 @@ const MovieCard = (props) => {
 	return (
 		<div className='col-md-3 moviecard'>
 			<Card sx={{ maxWidth: 330, maxHeight: 440, background: '#1a1d29' }} className='mt-3 p-1 card'>
+			<div className='favourite'><p className='star text-center'><AiOutlineStar size={30}/></p></div>
 				<CardMedia
 					component="img"
 					height="200"

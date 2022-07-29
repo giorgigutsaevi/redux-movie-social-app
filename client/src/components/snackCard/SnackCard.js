@@ -35,26 +35,6 @@ const SnackCard = (props) => {
 				<Button size="small" onClick={() => handleDelete(props.id)}>Delete</Button>
 			</CardActions>
 		</Card>
-
-		// <div className="card col-md-2 me-4 ms-4 mt-3 snackcard" style={{ width: "20rem", height: "10rem" }}>
-		// 	<div className="card-body">
-		// 		<h5 className="card-title">{props.title}</h5>
-		// 		<p className="card-text">
-		// 			{props.category}
-		// 		</p>
-		// 		<div className='mt-2'>
-		// 			<button className="btn btn-warning me-2">
-		// 				Edit
-		// 				<BiEdit/>
-		// 			</button>
-		// 			<button className="btn btn-danger" onClick={() => handleDelete(props.id)}>
-		// 				Delete
-		// 				<BiTrashAlt/>
-		// 			</button>
-		// 		</div>
-		// 	</div>
-		// </div>
-
 	)
 }
 
