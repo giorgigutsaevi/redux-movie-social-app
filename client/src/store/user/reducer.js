@@ -22,7 +22,11 @@ export default function userReducer(state = initialState, action) {
 			return { ...state, error: true, errorMessage: action.payload.response.data.errorMessage }
 
 		case CREATE_SUCCESS:
-			return { ...state, user: action.payload, isLoggedIn: true }
+			// console.log("FROM CREATE_SUCCESS", action.payload)
+			// console.log("specified", action.payload.config.data)
+			const newUser = JSON.parse(action.payload.config.data)
+			console.log(newUser)
+			return { ...state, user: newUser.username, isLoggedIn: true }
 
 		case LOGIN_SUCCESS:
 			console.log("LOGIN_SUCCESS", action.payload)

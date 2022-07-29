@@ -8,7 +8,7 @@ import "./Dashboard.css"
 
 const Dashboard = (props) => {
 	const [currentPageNum, setCurrentPageNum] = useState(props.currentPage)
-
+	
 	useEffect(() => {
 		props.dispatch(fetchRequest(currentPageNum))
 	}, [currentPageNum])

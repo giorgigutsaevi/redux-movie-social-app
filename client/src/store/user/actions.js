@@ -1,9 +1,12 @@
 import { CREATE_REQUEST, CREATE_SUCCESS, CREATE_ERROR, LOGIN_REQUEST, LOGOUT_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, LOGIN_ERROR, LOGOUT_ERROR, PERSIST_LOGIN_REQUEST, PERSIST_LOGIN_SUCCESS, PERSIST_LOGIN_ERROR, VERIFY_TOKEN_REQUEST, VERIFY_TOKEN_SUCCESS, VERIFY_TOKEN_ERROR} from "./types"
 
-export const createUserRequest = (user) => {
+export const createUserRequest = (user, navigate) => {
+	console.log("FROM create USER REQUEST", user)
 	return {
 		type: CREATE_REQUEST,
-		payload: user
+		payload: user,
+		navigate: navigate,
+		
 	}
 }
 

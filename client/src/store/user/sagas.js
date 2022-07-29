@@ -14,7 +14,9 @@ function* handleRegisterUser(action) {
 	try {
 		const newUser = yield axios.post(SIGNUP_API, action.payload)
 		const token = document.cookie.split("token=").join("")
+		console.log("FROM SAGA", newUser)
 		yield put(createUserSuccess(newUser, token))
+		action.navigate("/")
 
 	} catch (error) {
 		yield console.log(error)

@@ -21,9 +21,9 @@ const SnackCard = (props) => {
 
 	return (
 
-		<Card sx={{ maxWidth: 250,  background: '#1a1d29' }} className='col-md mt-3 me-4 snackcard'>
+		<Card sx={{ maxWidth: 200,  background: '#1a1d29' }} className='col-md mt-3 me-4 snackcard  wobble-vertical-on-hover'>
 			<CardContent>
-				<Typography gutterBottom variant="h5" component="div" style={{ color: "#6b3ec2" }}>
+				<Typography gutterBottom variant="h5" component="div" style={{ color: "#f5f5f5" }}>
 					{props.title}
 				</Typography>
 				<Typography variant="body" color="text.secondary" style={{ color: "#f5f5f5" }}>

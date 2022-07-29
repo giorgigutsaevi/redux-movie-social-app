@@ -10,6 +10,11 @@ import { createUserRequest } from '../../store/user/actions'
 
 const Signup = (props) => {
 	const navigate = useNavigate();
+	const [userForm, setUserForm] = useState({
+		username: "",
+		email: "",
+		password: "",
+	})
 
 	// console.log(props.user)
 
@@ -23,11 +28,6 @@ const Signup = (props) => {
 		progress: undefined,
 	})
 
-	const [userForm, setUserForm] = useState({
-		username: "",
-		email: "",
-		password: "",
-	})
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -39,22 +39,21 @@ const Signup = (props) => {
 		})
 	}
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
+	const handleSubmit = (e) => {
+
 		try {
-			props.dispatch(createUserRequest(userForm))
-			notify()
+			e.preventDefault();
+			props.dispatch(createUserRequest(userForm, navigate))
+			// notify()
+			setUserForm({
+				username: "",
+				email: "",
+				password: "",
+			})
 		} catch (error) {
-			console.log(error)
+			console.log("ERROR ->", error)
 		}
 
-		setUserForm({
-			username: "",
-			email: "",
-			password: "",
-		})
-
-		navigate("/")
 	}
 
 	return (

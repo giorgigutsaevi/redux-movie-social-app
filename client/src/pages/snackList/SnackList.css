@@ -4,7 +4,7 @@
 	min-height: 94vh;
 	background-color: #0e1014;
 	background-image: url("../../../public/images/endless-constellation.png");
-	background-position:center;
+	background-position: center;
 	background-size: cover;
 	min-height: 94;
 	font-family: 'Inter', sans-serif;
@@ -32,9 +32,12 @@
 
 .snack-list {
 	height: 45vh;
+	background-image: url(https://images.unsplash.com/photo-1512149074996-e923ac45be6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+	background-position: center;
+	background-size: cover;
 	width: 100%;
-	overflow-y : scroll;
-	background-color: #0e101485;	
+	overflow-y: scroll;
+	/* background-color: #0e101485; */
 	border-radius: 10px;
 	padding: 10px;
 }
