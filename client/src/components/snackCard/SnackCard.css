@@ -1,0 +1,11 @@
+.snackcard {
+	/* border: 2px solid red; */
+}
+
+.card-body {
+	background-color: #1a1d29;
+}
+
+.snackcard-title{
+	color: #f1f1f1;
+}

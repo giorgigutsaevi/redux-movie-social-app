@@ -67,11 +67,10 @@ const SnackList = (props) => {
 
 	return (
 		<div className='snacklist'>
-
-			<h3 className='p-4 snacklist-title'>Snack Wishlist</h3>
-			<h5 className='p-4 w-50 snacklist-sub-title'>A good movie is so much better with a good snack. This is a place to gather all your favourite snacks and have a neat little compiled list.</h5>
-			<h6 className='p-4 w-50 snacklist-text'>All your favorite snacks in one, consolidated place.</h6>
-			<div className='p-4'>
+			<h3 className='text-center snacklist-title p-3'>Snack Wishlist</h3>
+			<h5 className='text-center snacklist-sub-title'>A good movie is so much better with a good snack. This is a place to gather all your favourite snacks and have a neat little compiled list.</h5>
+			<h6 className='text-center snacklist-text p-2'>All your favorite snacks in one, consolidated place.</h6>
+			<div className='text-center'>
 				<button
 					type="button"
 					className="btn btn-primary modal-btn"
@@ -87,54 +86,14 @@ const SnackList = (props) => {
 				snackData={snackData}
 			/>
 			<ToastContainer />
-			<div className='snacklist-container'>
-				{/* 
-				<form onSubmit={handleSubmit}>
-
-					<div className='snacklist-form'>
-						<h5 className='snacklist-form-title'>Add a snack:</h5>
-						<label className='mt-2'>Candy</label>
-						<input
-							className="form-control mt-1 mb-2"
-							type="text"
-							aria-label="default input example"
-							onChange={handleChange}
-							name='title'
-							value={snackData.title}
-						/>
-						<label>Category</label>
-						<input
-							className="form-control mb-2"
-							type="text"
-							aria-label="default input example"
-							onChange={handleChange}
-							name='category'
-							value={snackData.category}
-						/>
-						<label>Price</label>
-						<input
-							className="form-control"
-							type="text"
-							aria-label="default input example"
-							onChange={handleChange}
-							name='price'
-							value={snackData.price}
-						/>
-						<button className='mt-2 form-btn' type='submit'>Add</button>
-					</div>
-				</form> */}
-
+			<div className='snacklist-container p-4'>
+				
 				<div className='snack-list'>
 					<div className='container'>
 						<div className='row'>
 							{snackElements}
 						</div>
-
 					</div>
-
-				</div>
-				<div>
-					<img src='/images/snack.png' alt='snack-img' />
 				</div>
 			</div>
 		</div>
