@@ -11,7 +11,6 @@ export const getSnacks = async (req, res) => {
 export const addSnack = async (req, res) => {
 	const { title, category, price } = req.body
 	console.log('REQ USER ID-->', req.user)
-
 	console.log(title, category)
 
 	try {

@@ -6,16 +6,29 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { connect } from 'react-redux'
 import "./MovieCard.css"
 
 const MovieCard = (props) => {
 	const [readMore, setReadMore] = useState(false);
 
 	const IMAGE_URL = "https://image.tmdb.org/t/p/w500"
+
+	const findMovieBasedOnId = (id) => {
+		let foundMovie = props.movies.find((movie) => movie.id === id);
+		return foundMovie
+	}
+
+	const handleAddToFavorite = (id) => {
+		let movie = findMovieBasedOnId(id)
+		console.log(movie)
+		
+	}
+
 	return (
 		<div className='col-md-3 moviecard'>
 			<Card sx={{ maxWidth: 330, minHeight: 440, background: '#1a1d29' }} className='mt-3 p-1 card'>
-			<div className='favourite'><p className='star text-center'><AiOutlineStar size={30}/></p></div>
+				<div className='favourite' onClick={() => handleAddToFavorite(props.movieId)}><p className='star text-center'><AiOutlineStar size={30} /></p></div>
 				<CardMedia
 					component="img"
 					height="200"
@@ -44,4 +57,10 @@ const MovieCard = (props) => {
 	)
 }
 
-export default MovieCard
+const mapStateToProps = (state) => {
+	return {
+		movies: state.movies.movieList.results,
+	}
+}
+
+export default connect(mapStateToProps)(MovieCard)

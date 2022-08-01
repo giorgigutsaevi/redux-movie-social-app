@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import movieSchema from "./movie.js";
 
 const Schema = mongoose.Schema
 
@@ -30,8 +31,6 @@ const userSchema = new Schema({
 		type: String,
 		default: "/images/profile.png"
 	},
-	favoriteMovies: []
-
 
 }, { timestamps: true })
 

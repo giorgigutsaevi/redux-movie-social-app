@@ -39,6 +39,7 @@ const Dashboard = (props) => {
 			<MovieCard
 				key={movie.id}
 				movieData={movie}
+				movieId={movie.id}
 			/>)
 	})
 

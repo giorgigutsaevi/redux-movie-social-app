@@ -26,5 +26,8 @@ router.get('/logout', logoutUser);
 // VerifyToken Route
 router.get("/authenticated", isAuthenticated)
 
+// Add a movieToFavorites
+// router.post("/add-movie/:id", )
+
 export default router;
 
