@@ -5,12 +5,10 @@
 	background-image: url("https://i.imgur.com/ZVeAT9R.jpg");
 	background-position: center;
 	background-size: cover;
-	position: relative;
 }
 
 .homepage-title{
-	position: absolute;
-	top: 13%;
+	margin-top: 120px;
 	color: #f2f4fa;
 	font-family: 'Inter', sans-serif;
 	font-weight: 600;
@@ -19,8 +17,6 @@
 }
 
 .homepage-sub-title{
-	position: absolute;
-	top: 22%;
 	color: #f2f4fa;
 	font-family: 'Inter', sans-serif;
 	padding: 20px;
@@ -28,9 +24,7 @@
 }
 
 .homepage-socials{
-	position: absolute;
 	padding: 20px;
-	bottom: 15%;
 	color: #f2f4fa;
 	display: flex;
 	flex-direction: column;
@@ -42,9 +36,7 @@
 }
 
 .homepage-call-to-action{
-	position: absolute;
 	padding: 20px;
-	top:30%;
 }
 
 .watchlist-button{
@@ -62,4 +54,4 @@
 .watchlist-button:hover{
 	background-color: #6b3ec2;
 	border: 2px solid #6b3ec2;
-}
+} 
